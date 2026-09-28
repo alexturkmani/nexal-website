@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://nexal-website-five.vercel.app').replace(/\/$/, '');
+export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.nexalfitness.com').replace(/\/$/, '');
 
 export const playStoreBaseUrl = 'https://play.google.com/store/apps/details?id=com.nexal.app';
 
