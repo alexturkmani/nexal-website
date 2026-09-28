@@ -1,20 +1,5 @@
-import { appSchema, playStoreUrl, websiteSchema } from './site-config';
-import Image from 'next/image';
-
-function BrandMark() { return <span className="brand-mark" aria-hidden="true"><Image src="/nexal-horizontal.png" width={158} height={48} alt="" priority /></span>; }
-
-function GooglePlayMark() {
-  return <svg className="google-play-mark" viewBox="0 0 32 36" aria-hidden="true">
-    <path fill="#00d7fe" d="M1.8 1.6 18.9 18 1.9 34.5A4 4 0 0 1 .7 31.6V4.4c0-1 .4-2 1.1-2.8Z"/>
-    <path fill="#00f076" d="m18.9 18 5.4-5.2L5.2 1.9C4 1.2 2.8 1 1.8 1.6L18.9 18Z"/>
-    <path fill="#ffdc00" d="m18.9 18-17 16.5c1 .6 2.2.4 3.4-.3l19-10.9-5.4-5.3Z"/>
-    <path fill="#ff3a44" d="m29.4 15.7-5.1-2.9-5.4 5.2 5.4 5.3 5.1-3c2-1.1 2-3.4 0-4.6Z"/>
-  </svg>;
-}
-
-function PlayButton({ compact = false, placement }: { compact?: boolean; placement: string }) {
-  return <a className={`play-button ${compact ? "compact" : ""}`} href={playStoreUrl(placement)} aria-label="Get Nexal on Google Play"><GooglePlayMark/><span><small>GET IT ON</small><strong>Google Play</strong></span></a>;
-}
+import { appSchema, websiteSchema } from './site-config';
+import { BrandMark, PlayButton, SiteFooter } from './components/MarketingUi';
 
 function PhonePreview() {
   return <div className="phone-wrap" role="img" aria-label="Illustrative Nexal Android dashboard showing daily calories, protein, an AI workout plan and weekly progress">
@@ -60,6 +45,6 @@ export default function Home() {
     <section className="faq-section shell" id="faq"><div><span className="section-kicker">THE DETAILS</span><h2>Nexal app<br /><em>questions.</em></h2></div><div className="faq-list"><details open><summary>Is Nexal free to download on Android?<span>+</span></summary><p>Yes. Nexal is free to download on Google Play. Core meal, calorie, macro, workout and progress tracking are available without a subscription. Premium unlocks AI plans and advanced tools.</p></details><details><summary>Does Nexal generate both workout and meal plans?<span>+</span></summary><p>Nexal Premium generates workout and meal plans using your goals, schedule and preferences. Plans provide general fitness and wellness guidance, not medical advice.</p></details><details><summary>Can I track calories and macros in Nexal?<span>+</span></summary><p>Yes. Nexal tracks calories, protein, carbohydrates and fats alongside workouts and progress.</p></details><details><summary>Is Nexal available on iPhone?<span>+</span></summary><p>Nexal is currently available for Android through Google Play.</p></details></div></section>
 
     <section className="final-cta"><div className="shell"><BrandMark/><h2>Your next chapter<br />starts <em>today.</em></h2><p>Start with free tracking. Unlock AI plans when you are ready.</p><PlayButton placement="final_cta"/></div></section>
-    <footer><div className="shell"><a href="#top" className="brand" aria-label="Nexal home"><BrandMark/></a><p>Fitness, nutrition and progress, connected.</p><div><a href="/ai-workout-planner">AI workout planner for Android</a><a href="/ai-meal-planner">AI meal planner</a><a href="/workout-meal-planner-app">Workout and meal planner app</a><a href="/calorie-macro-tracker">Calorie and macro tracker</a><a href={playStoreUrl('footer')}>Get Nexal on Google Play</a><a href="mailto:support@nexal.app">Support</a><a href="/privacy">Privacy</a></div><div className="footer-meta"><span>© 2026 Nexal</span><a className="designer-credit" href="https://blumint.com.au/" target="_blank" rel="noopener noreferrer">Designed by Blu Mint</a></div></div></footer>
+    <SiteFooter />
   </main>;
 }

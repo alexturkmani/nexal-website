@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import '../seo-landing.css';
-import { appSchema, playStoreUrl } from '../site-config';
+import { appSchema } from '../site-config';
+import { BrandMark, PlayButton, SiteFooter } from './MarketingUi';
 
 type Props = {
   slug: string; kicker: string; title: string; intro: string; sectionTitle: string;
@@ -10,14 +10,58 @@ type Props = {
   faqs: { q: string; a: string }[];
 };
 
+const previews: Record<string, { label: string; heading: string; rows: { day: string; type: string; name: string; detail: string }[] }> = {
+  ai_workout_planner: { label: 'YOUR TRAINING WEEK', heading: 'A plan that fits your life.', rows: [
+    { day: 'MON', type: 'STRENGTH', name: 'Upper body', detail: '32 min' },
+    { day: 'WED', type: 'RECOVERY', name: 'Mobility flow', detail: '18 min' },
+    { day: 'FRI', type: 'STRENGTH', name: 'Lower body', detail: '40 min' },
+  ] },
+  ai_meal_planner: { label: 'YOUR DAILY MEALS', heading: 'Nutrition, made clearer.', rows: [
+    { day: 'AM', type: 'BREAKFAST', name: 'Protein oat bowl', detail: '420 kcal' },
+    { day: 'PM', type: 'LUNCH', name: 'Balanced lunch', detail: '610 kcal' },
+    { day: 'EVE', type: 'DINNER', name: 'Dinner plan', detail: '540 kcal' },
+  ] },
+  calorie_macro_tracker: { label: 'TODAY AT A GLANCE', heading: 'Know your targets.', rows: [
+    { day: 'P', type: 'PROTEIN', name: '124 of 150 g', detail: '83%' },
+    { day: 'C', type: 'CARBS', name: '184 of 250 g', detail: '74%' },
+    { day: 'F', type: 'FATS', name: '51 of 75 g', detail: '68%' },
+  ] },
+  workout_meal_planner: { label: 'YOUR DAY IN NEXAL', heading: 'Everything connects.', rows: [
+    { day: '01', type: 'WORKOUT', name: 'Upper body strength', detail: '32 min' },
+    { day: '02', type: 'NUTRITION', name: 'Balanced meal plan', detail: 'View' },
+    { day: '03', type: 'PROGRESS', name: 'Review your week', detail: 'View' },
+  ] },
+};
+
+function SeoShowcase({ slug }: { slug: string }) {
+  const preview = previews[slug];
+  return <div className="seo-showcase" role="img" aria-label={`Illustrative Nexal app preview: ${preview.heading}`}>
+    <div className="seo-showcase-orbit" aria-hidden="true" />
+    <div className="seo-preview-card">
+      <div className="seo-preview-top"><span>NEXAL <b>✦</b></span><i>YOUR PLAN</i></div>
+      <span className="seo-preview-label">{preview.label}</span>
+      <h2>{preview.heading}</h2>
+      <div className="seo-preview-rows">{preview.rows.map((row) => <div className="seo-preview-row" key={row.name}>
+        <span className="seo-preview-day">{row.day}</span><span className="seo-preview-row-copy"><small>{row.type}</small><strong>{row.name}</strong></span><em>{row.detail}</em>
+      </div>)}</div>
+      <div className="seo-preview-progress"><span>KEEP YOUR MOMENTUM</span><div className="seo-preview-bars" aria-hidden="true">{[35, 58, 47, 77, 64, 91, 76].map((height, index) => <i key={index} style={{ height: `${height}%` }} />)}</div></div>
+    </div>
+    <div className="seo-showcase-chip seo-showcase-chip-top"><span>✓</span> {slug === 'calorie_macro_tracker' ? 'Targets at a glance' : 'Plan ready for today'}</div>
+    <div className="seo-showcase-chip seo-showcase-chip-bottom"><span>↗</span> Progress in one view</div>
+  </div>;
+}
+
 export default function SeoLanding({ slug, kicker, title, intro, sectionTitle, benefits, sections, faqs }: Props) {
-  return <main className="seo-page">
-    <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(appSchema)}} />
-    <nav className="seo-nav shell"><Link href="/"><Image src="/nexal-horizontal.png" width={145} height={48} alt="Nexal home" priority /></Link><a className="seo-cta" href={playStoreUrl(`${slug}_nav`)}>Get Nexal on Google Play</a></nav>
-    <header className="seo-hero shell"><span className="seo-kicker">{kicker}</span><h1>{title}</h1><p>{intro}</p><a className="seo-cta" href={playStoreUrl(`${slug}_hero`)}>Get Nexal on Google Play</a></header>
-    <section className="seo-proof shell">{benefits.map((b,i)=><article key={b.title}><span className="seo-kicker">0{i+1}</span><h2>{b.title}</h2><p>{b.text}</p></article>)}</section>
-    <section className="seo-copy"><div className="shell"><h2>{sectionTitle}</h2><div className="seo-copy-grid">{sections.map(s=><article key={s.title}><h3>{s.title}</h3><p>{s.text}</p></article>)}</div></div></section>
-    <section className="seo-faq"><div className="shell"><h2>Questions, answered.</h2>{faqs.map(f=><details key={f.q}><summary>{f.q}</summary><p>{f.a}</p></details>)}</div></section>
-    <section className="seo-bottom"><h2>Build a routine you can follow.</h2><p>Start with free tracking and unlock AI planning with Premium.</p><a className="seo-cta" href={playStoreUrl(`${slug}_bottom`)}>Get Nexal on Google Play</a><div className="seo-links"><Link href="/ai-workout-planner">AI workout planner for Android</Link><Link href="/ai-meal-planner">AI meal planner</Link><Link href="/workout-meal-planner-app">Workout and meal planner app</Link><Link href="/calorie-macro-tracker">Calorie and macro tracker</Link></div></section>
+  return <main className="seo-page" id="top">
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(appSchema) }} />
+    <nav className="nav shell"><Link href="/" className="brand" aria-label="Nexal home"><BrandMark /></Link><div className="nav-links"><Link href="/">Home</Link><a href="#benefits">Benefits</a><a href="#details">Details</a><a href="#faq">Questions</a></div><PlayButton compact placement={`${slug}_nav`} /></nav>
+    <header className="seo-hero shell"><div className="seo-hero-copy"><span className="eyebrow">{kicker}</span><h1>{title}</h1><p>{intro}</p><div className="hero-actions"><PlayButton placement={`${slug}_hero`} /><a className="text-link" href="#benefits">Explore the benefits <span>↓</span></a></div><div className="trust-row"><p>Free core tracking. Premium AI planning. Available on Android.</p></div></div><SeoShowcase slug={slug} /></header>
+    <div className="signal-strip" aria-label="Nexal benefits"><div className="shell"><span>◆ PERSONALIZED DAILY TARGETS</span><span>◆ AI-POWERED PLANS</span><span>◆ MEANINGFUL PROGRESS</span></div></div>
+    <section className="seo-benefits shell" id="benefits"><div className="section-heading"><div><span className="section-kicker">BUILT AROUND YOUR ROUTINE</span><h2>{sectionTitle}</h2></div><p>Helpful tools for your daily fitness and nutrition decisions, all in one Android app.</p></div><div className="seo-benefit-grid">{benefits.map((benefit, index) => <article className={`seo-benefit-card seo-benefit-${index + 1}`} key={benefit.title}><span className="card-number">0{index + 1}</span><div className="seo-benefit-icon" aria-hidden="true">{index === 0 ? '◎' : index === 1 ? '✦' : '↗'}</div><h3>{benefit.title}</h3><p>{benefit.text}</p><div className="seo-benefit-meter" aria-hidden="true"><i /></div></article>)}</div></section>
+    <section className="seo-details" id="details"><div className="shell seo-details-grid"><div className="seo-details-copy"><span className="section-kicker light">PLAN. TRACK. PROGRESS.</span><h2>A clearer way to<br /><em>keep moving.</em></h2><p>Your plan and the actions you take belong together. Keep the details visible without losing sight of the bigger picture.</p><PlayButton placement={`${slug}_details`} /></div><div className="seo-detail-panel"><div className="seo-detail-panel-head"><span>ILLUSTRATIVE APP OVERVIEW</span><strong>Your momentum</strong></div><div className="seo-detail-chart" role="img" aria-label="Illustrative weekly progress chart"><div className="seo-detail-grid"/><div className="seo-detail-bars">{[42, 57, 48, 71, 64, 83, 92].map((height,index)=><i key={index} style={{height:`${height}%`}} />)}</div></div><div className="seo-detail-labels"><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span></div><div className="seo-detail-caption"><span>Training</span><span>Nutrition</span><span>Progress</span></div></div></div></section>
+    <section className="seo-copy shell"><span className="section-kicker">THE DETAILS</span><div className="seo-copy-grid">{sections.map((section, index) => <article key={section.title}><span className="seo-copy-number">0{index + 1}</span><h3>{section.title}</h3><p>{section.text}</p></article>)}</div></section>
+    <section className="faq-section seo-faq shell" id="faq"><div><span className="section-kicker">THE DETAILS</span><h2>Nexal app<br /><em>questions.</em></h2></div><div className="faq-list">{faqs.map((faq, index) => <details key={faq.q} open={index === 0}><summary>{faq.q}<span>+</span></summary><p>{faq.a}</p></details>)}</div></section>
+    <section className="final-cta seo-final"><div className="shell"><BrandMark /><h2>Build a routine<br />you can <em>follow.</em></h2><p>Start with free tracking. Unlock AI planning when you are ready.</p><PlayButton placement={`${slug}_bottom`} /><div className="seo-links"><Link href="/ai-workout-planner">AI workout planner</Link><Link href="/ai-meal-planner">AI meal planner</Link><Link href="/workout-meal-planner-app">Workout and meal planner</Link><Link href="/calorie-macro-tracker">Calorie and macro tracker</Link></div></div></section>
+    <SiteFooter />
   </main>;
 }
