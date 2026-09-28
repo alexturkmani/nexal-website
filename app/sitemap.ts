@@ -1,13 +1,13 @@
 import type { MetadataRoute } from 'next';
+import { siteUrl } from './site-config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
   return [
-    { url: 'https://www.nexalfitness.com/', lastModified: now, changeFrequency: 'weekly', priority: 1 },
-    { url: 'https://www.nexalfitness.com/ai-workout-planner', lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: 'https://www.nexalfitness.com/ai-meal-planner', lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: 'https://www.nexalfitness.com/workout-meal-planner-app', lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: 'https://www.nexalfitness.com/calorie-macro-tracker', lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: 'https://www.nexalfitness.com/privacy', lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
+    { url: `${siteUrl}/`, changeFrequency: 'weekly', priority: 1 },
+    { url: `${siteUrl}/ai-workout-planner`, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${siteUrl}/ai-meal-planner`, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${siteUrl}/workout-meal-planner-app`, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${siteUrl}/calorie-macro-tracker`, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${siteUrl}/privacy`, changeFrequency: 'yearly', priority: 0.2 },
   ];
 }
