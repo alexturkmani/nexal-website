@@ -1,8 +1,11 @@
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 
 const base = (process.env.SEO_CHECK_URL || 'http://localhost:3100').replace(/\/$/, '');
 const canonicalBase = 'https://www.nexalfitness.com';
-const slugs = ['beginner-3-day-workout-plan', 'how-to-track-calories-and-macros', 'choose-workout-and-meal-planner-app'];
+const source = await readFile(new URL('../app/guides/content.ts', import.meta.url), 'utf8');
+const slugs = [...source.matchAll(/slug: '([^']+)'/g)].map(match => match[1]);
+assert.equal(new Set(slugs).size, slugs.length, 'Unique guide URLs');
 const decode = value => value.replace(/&amp;/g, '&').replace(/&#x27;/g, "'").replace(/&quot;/g, '"');
 async function html(path) {
   const response = await fetch(`${base}${path}`);
