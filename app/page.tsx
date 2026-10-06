@@ -1,5 +1,7 @@
 import { appSchema, websiteSchema } from './site-config';
 import { BrandMark, PlayButton, SiteFooter } from './components/MarketingUi';
+import Link from 'next/link';
+import GuideCards from './guides/GuideCards';
 
 function PhonePreview() {
   return <div className="phone-wrap" role="img" aria-label="Illustrative Nexal Android dashboard showing daily calories, protein, an AI workout plan and weekly progress">
@@ -45,6 +47,7 @@ export default function Home() {
     <section className="faq-section shell" id="faq"><div><span className="section-kicker">THE DETAILS</span><h2>Nexal app<br /><em>questions.</em></h2></div><div className="faq-list"><details open><summary>Is Nexal free to download on Android?<span>+</span></summary><p>Yes. Nexal is free to download on Google Play. Core meal, calorie, macro, workout and progress tracking are available without a subscription. Premium unlocks AI plans and advanced tools.</p></details><details><summary>Does Nexal generate both workout and meal plans?<span>+</span></summary><p>Nexal Premium generates workout and meal plans using your goals, schedule and preferences. Plans provide general fitness and wellness guidance, not medical advice.</p></details><details><summary>Can I track calories and macros in Nexal?<span>+</span></summary><p>Yes. Nexal tracks calories, protein, carbohydrates and fats alongside workouts and progress.</p></details><details><summary>Is Nexal available on iPhone?<span>+</span></summary><p>Nexal is currently available for Android through Google Play.</p></details></div></section>
 
     <section className="final-cta"><div className="shell"><BrandMark/><h2>Your next chapter<br />starts <em>today.</em></h2><p>Start with free tracking. Unlock AI plans when you are ready.</p><PlayButton placement="final_cta"/></div></section>
+    <section className="home-guides shell" aria-labelledby="home-guides-heading"><span className="section-kicker">MAKE YOUR NEXT STEP CLEARER</span><h2 id="home-guides-heading">Practical workout and<br />macro tracking guides.</h2><GuideCards /><Link className="text-link" href="/guides">Explore all fitness guides →</Link></section>
     <SiteFooter />
   </main>;
 }

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import '../seo-landing.css';
 import { appSchema } from '../site-config';
 import { BrandMark, PlayButton, SiteFooter } from './MarketingUi';
+import GuideCards from '../guides/GuideCards';
 
 type Props = {
   slug: string; kicker: string; title: string; intro: string; sectionTitle: string;
@@ -84,6 +85,7 @@ export default function SeoLanding({ slug, kicker, title, intro, sectionTitle, b
     <section className="seo-copy shell"><span className="section-kicker">THE DETAILS</span><div className="seo-copy-grid">{sections.map((section, index) => <article key={section.title}><span className="seo-copy-number">0{index + 1}</span><h3>{section.title}</h3><p>{section.text}</p></article>)}</div></section>
     <section className="faq-section seo-faq shell" id="faq"><div><span className="section-kicker">THE DETAILS</span><h2>Nexal app<br /><em>questions.</em></h2></div><div className="faq-list">{faqs.map((faq, index) => <details key={faq.q} open={index === 0}><summary>{faq.q}<span>+</span></summary><p>{faq.a}</p></details>)}</div></section>
     <section className="final-cta seo-final"><div className="shell"><BrandMark /><h2>Build a routine<br />you can <em>follow.</em></h2><p>Start with free tracking. Unlock AI planning when you are ready.</p><PlayButton placement={`${slug}_bottom`} /><div className="seo-links"><Link href="/ai-workout-planner">AI workout planner</Link><Link href="/ai-meal-planner">AI meal planner</Link><Link href="/workout-meal-planner-app">Workout and meal planner</Link><Link href="/calorie-macro-tracker">Calorie and macro tracker</Link></div></div></section>
+    <section className="home-guides shell" aria-labelledby="related-guides-heading"><span className="section-kicker">PUT THE DETAILS INTO PRACTICE</span><h2 id="related-guides-heading">Workout and nutrition guides</h2><GuideCards /><Link className="text-link" href="/guides">Explore all guides →</Link></section>
     <SiteFooter />
   </main>;
 }
