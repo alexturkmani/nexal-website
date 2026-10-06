@@ -311,6 +311,102 @@ const acquisitionGuides: Guide[] = [
   },
 ];
 
-export const guides: Guide[] = [...originalGuides, ...acquisitionGuides];
+const workflowGuides: Guide[] = [
+  {
+    slug: 'track-homemade-meals-and-meal-prep-macros',
+    title: 'How to track homemade meals and meal-prep macros',
+    metaTitle: 'Track Homemade Meals & Meal Prep Macros on Android',
+    description: 'Calculate meal-prep portions with a worked recipe example, avoid double-counting and log homemade meals with free calorie and macro tracking in Nexal.',
+    category: 'MEAL PREP TRACKING', readTime: '5 min read',
+    intro: 'A homemade lunch rarely comes with a nutrition label for your exact portion. You can still make a useful estimate by recording the ingredients, calculating the batch totals and dividing them by the amount you actually eat.',
+    takeaway: 'Estimate the whole batch first, then your share of it. Keep raw and cooked entries consistent and do not log both the finished dish and its ingredients twice.',
+    sections: [
+      { id: 'ingredients', title: 'Start with the ingredients you actually used', paragraphs: [
+        'Write down the ingredients and their quantities before dividing the meal into containers. Include additions such as cooking oil, sauces or toppings when they form part of the food you eat. A generic entry for a similar dish may not match your recipe.',
+        'Use the ingredient label or an appropriate nutrition entry, then scale its values to your quantity. The NHS explains that packaged-food labels may list nutrition per 100 grams, per 100 millilitres or per portion. Check which basis you are using instead of copying a number without its unit.',
+        'A raw ingredient and its cooked version are not interchangeable just because both entries are measured in grams. Match the quantity you measured to the type of entry. Cooking can change the food’s water content and weight, so keep a clear record of your method.',
+      ] },
+      { id: 'worked-example', title: 'A worked meal-prep portion calculation', paragraphs: [
+        'Imagine your ingredient calculations add up to 2,000 kcal, 120 grams of protein, 240 grams of carbohydrate and 62 grams of fat for a batch. If it is divided into four equal portions, each gets one quarter of those totals.',
+        'If the containers are not equal, divide by the measured finished batch weight instead. In this example, a 1,600-gram batch gives a 400-gram portion a 25% share. A 300-gram portion has an 18.75% share. This proportional method assumes the ingredients are distributed evenly.',
+      ], example: { title: 'Illustrative batch totals and portion shares', headers: ['Nutrition', 'Whole batch', '400 g portion (25%)', '300 g portion (18.75%)'], rows: [
+        ['Energy', '2,000 kcal', '500 kcal', '375 kcal'],
+        ['Protein', '120 g', '30 g', '22.5 g'],
+        ['Carbohydrate', '240 g', '60 g', '45 g'],
+        ['Fat', '62 g', '15.5 g', '11.625 g'],
+      ], caption: 'Invented values for arithmetic only, not an actual recipe or a recommended meal. Rounded input values and uneven ingredients limit precision.' } },
+      { id: 'uneven-portions', title: 'Check whether the portions really contain the same mix', paragraphs: [
+        'The finished-weight method works best when the ingredients are mixed evenly. If one container gets more of a protein ingredient and another gets more sauce, equal container weights do not establish equal nutrition.',
+        'For meals with separate components, record the component portions instead of assuming the entire meal has one uniform composition. Keep the process manageable: you are building an estimate, not performing a laboratory analysis.',
+        'Recipe calculations can also overstate intake if you include ingredients that are discarded or not consumed. Be honest about that uncertainty rather than presenting the final number as exact.',
+      ] },
+      { id: 'log-in-nexal', title: 'Log the portion in Nexal, not the whole batch', paragraphs: [
+        'Download Nexal for Android, create your account and complete the setup. Core manual meal, calorie and macro tracking are free. Use the supported manual logging workflow to record the nutrition for the portion you ate, not every container you prepared.',
+        'You can calculate batch and portion totals outside the app and then log your portion. This article does not promise an automatic recipe-import or batch-weight calculator in Nexal. If you prefer to record ingredients separately, do not also add a full-meal entry for the same food.',
+        'When you repeat the same meal, copying a recent meal can save time. Review the quantity and nutrition if you changed the ingredients or portion. A reused entry should be a helpful starting point, not an assumption that every lunch is identical.',
+      ] },
+      { id: 'planning-next-week', title: 'Separate meal-prep tracking from AI meal planning', paragraphs: [
+        'Tracking tells you what you ate; planning suggests what to prepare next. Nexal Premium adds AI meal ideas, substitutions, AI macro estimates and barcode scanning. None of those tools makes a homemade-food estimate perfectly accurate.',
+        'Try free logging first to see whether the diary fits your routine. If planning is the time-consuming part, review the Premium offer and any eligible trial in Google Play. Independently check ingredients and food labels when allergies or dietary restrictions matter.',
+        'This is an educational logging method, not a calorie target or a weight-loss programme. For individual dietary needs, seek appropriate professional advice. If detailed tracking negatively affects your wellbeing, you do not need to keep doing it.',
+      ] },
+    ],
+    feature: { href: '/calorie-macro-tracker', label: 'Explore free meal and macro tracking in Nexal', text: 'Keep homemade meals beside your workout and progress tracking.' },
+    sources: [{ href: 'https://www.nhs.uk/live-well/eat-well/food-guidelines-and-food-labels/how-to-read-food-labels/', label: 'NHS: nutrition labels and portion information' }],
+    faqs: [
+      { question: 'How do I calculate macros for one meal-prep portion?', answer: 'Estimate the batch totals, then multiply by your portion’s share of the batch. This assumes the ingredients are distributed evenly; otherwise log components separately.' },
+      { question: 'Does Nexal automatically calculate a homemade recipe?', answer: 'This guide does not promise an automatic recipe calculator. Calculate your portion totals and use the supported manual logging tools.' },
+      { question: 'Can I track homemade meals without subscribing?', answer: 'Yes. Core manual meal, calorie and macro tracking are free. Premium AI planning and food tools are optional.' },
+    ],
+  },
+  {
+    slug: 'workout-tracker-vs-ai-workout-planner',
+    title: 'Workout tracker vs AI workout planner: which do you need?',
+    metaTitle: 'Workout Tracker vs AI Planner: Which Do You Need?',
+    description: 'Understand workout logging versus AI plan generation, compare what to record and try free workout tracking before choosing Nexal Premium on Android.',
+    category: 'WORKOUT APP GUIDE', readTime: '4 min read',
+    intro: 'A workout tracker remembers what you did. An AI workout planner proposes what to do next. You may need one, both or neither, depending on whether you already have a suitable training routine.',
+    takeaway: 'Use free tracking when you have a routine to record. Consider paid planning when organising sessions is the problem, and review any generated programme before following it.',
+    sections: [
+      { id: 'tracker', title: 'What a workout tracker helps you record', paragraphs: [
+        'A tracker provides a place to record exercises and completed work. Clear records can help you remember your last session, compare similar sessions and discuss your routine with a coach.',
+        'For resistance training, distinguish a repetition from a set. The NHS describes a repetition as one complete movement and a set as a group of repetitions. A record should describe what you actually completed, not just copy the intended programme.',
+        'Keep exercise variations and units clear. A weight entered without saying whether it is for one dumbbell or the whole exercise can be confusing later. This is a recording habit, not a reason to increase resistance or train through pain.',
+      ] },
+      { id: 'planner', title: 'What an AI workout planner adds', paragraphs: [
+        'A planner uses inputs such as your goal, experience and available training days to organise sessions. The value is in creating a starting structure, not simply generating a longer list of exercises.',
+        'Nexal Premium generates four-to-six-week workout plans for home or gym settings, with sets, repetitions and rest times. Core custom workouts and workout logging are available without a subscription.',
+        'AI does not observe your technique, assess an injury or know whether a particular exercise is suitable for you. Review the output and seek qualified guidance when you need help selecting movements or deciding how to train.',
+      ] },
+      { id: 'decision', title: 'Match the app feature to the problem you have', paragraphs: [
+        'Use this checklist before paying for a planner. If you already have a suitable programme, buying another one may not solve the task you care about.',
+      ], example: { title: 'Tracking or planning: a practical decision checklist', headers: ['Your situation', 'Start with', 'What to test'], rows: [
+        ['A coach already provides your programme', 'A workout tracker', 'Can you clearly record and find completed sessions?'],
+        ['You know your exercises but forget previous details', 'A workout tracker', 'Does your history make the next session easier to organise?'],
+        ['You need help structuring the week', 'A planner plus tracking', 'Does the suggested schedule fit your actual availability?'],
+        ['You are unsure about exercise safety or technique', 'Qualified guidance', 'Do not rely on AI output as a personal assessment'],
+      ], caption: 'Feature-selection examples, not a personalised exercise recommendation.' } },
+      { id: 'planned-vs-done', title: 'Keep planned work separate from completed work', paragraphs: [
+        'Imagine a programme calls for three sets, but you complete two. Your history should reflect the two completed sets, with a note explaining any useful context. A plan is an intention; a workout log is a record.',
+        'Before your next session, review the relevant exercise and session details rather than comparing unrelated totals. A different machine, exercise variation or movement range can make a direct comparison misleading.',
+        'Use those notes to discuss adjustments with a trainer if needed. A chart or AI recommendation is not proof that a specific increase in workload is appropriate.',
+      ] },
+      { id: 'try-free', title: 'Try Nexal’s free workout tracker before deciding on AI', paragraphs: [
+        'Install Nexal from Google Play and create your account. After setup, core workout tracking and custom workouts are available without subscribing. Record a familiar session, find the entry again and decide whether the workflow fits your training.',
+        'If planning is the part you want help with, explore Premium after testing the tracker. Review the local price, the plan you are purchasing and any trial eligibility in the Google Play checkout. The advertised fourteen-day trial is for eligible subscribers, not a promise for every account.',
+        'Nexal brings workouts, meals and progress together on Android, but the useful first outcome is modest: keeping one real session clear and accessible. Neither a tracker nor an AI plan guarantees a particular fitness result.',
+      ] },
+    ],
+    feature: { href: '/ai-workout-planner', label: 'Compare Nexal’s free workout tracking and Premium planning', text: 'Record your routine free. Add AI planning only when you need it.' },
+    sources: [{ href: 'https://www.nhs.uk/live-well/exercise/how-to-improve-strength-flexibility/', label: 'NHS: strength activity, sets and repetitions' }],
+    faqs: [
+      { question: 'Do I need AI planning to log workouts?', answer: 'No. Nexal’s core workout logging and custom workouts are free. Premium is needed for AI plan generation, not basic tracking.' },
+      { question: 'Can I use Nexal to record a coach’s programme?', answer: 'You can use custom workouts and workout logging to record your routine. This does not promise an automatic coach-platform import or integration.' },
+      { question: 'Does an AI planner replace a personal trainer?', answer: 'No. AI cannot supervise technique or provide an individual clinical assessment. Use qualified guidance when required.' },
+    ],
+  },
+];
+
+export const guides: Guide[] = [...originalGuides, ...acquisitionGuides, ...workflowGuides];
 
 export function findGuide(slug: string) { return guides.find((guide) => guide.slug === slug); }
