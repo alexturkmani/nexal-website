@@ -12,4 +12,5 @@
 /* Keep the final highlighted word readable against the lime CTA panel. */
 .final-cta h2{max-width:760px;padding:0 .08em .12em;overflow:visible}
 .final-cta h2 em{color:#0e4e37;text-shadow:0 2px 0 #ffffff55}
+.section-kicker,.how-grid article>span,.premium-screen>span{color:#126b43}.section-kicker.light{color:var(--lime)}.card-number{opacity:1}.spark-chart>span{color:#536158}.premium-row small{color:#536158}.premium-row em{color:#126b43}.premium-row>i{color:#126b43}
 .legal-page{min-height:100vh;padding:70px 24px;background:#f4f5ef}.legal-shell{width:min(760px,100%);margin:auto}.legal-brand{display:inline-block;font-weight:800;margin-bottom:70px}.legal-page h1{font-size:64px;margin-bottom:12px}.legal-date{color:#758078;margin-bottom:55px}.legal-page section{padding:26px 0;border-top:1px solid #ced5ce}.legal-page section h2{font-size:22px;margin:0 0 10px}.legal-page section p{color:#5f6b62;line-height:1.75;margin:0}.legal-page section a{color:#14945e;text-decoration:underline}

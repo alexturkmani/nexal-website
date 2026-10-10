@@ -1,3 +1,7 @@
+import { choosingGuides } from './choosing-guides';
+import { trainingGuides } from './training-guides';
+import { nutritionGuides } from './nutrition-guides';
+
 export type GuideSection = {
   id: string;
   title: string;
@@ -6,6 +10,7 @@ export type GuideSection = {
   example?: { title: string; headers: string[]; rows: string[][]; caption: string };
 };
 export type Guide = {
+  publishedAt?: string; updatedAt?: string;
   slug: string; title: string; metaTitle: string; description: string; category: string;
   readTime: string; intro: string; takeaway: string; sections: GuideSection[];
   feature: { href: string; label: string; text: string };
@@ -14,6 +19,18 @@ export type Guide = {
 };
 
 export const publishedDate = '2026-10-06';
+export const libraryUpdatedDate = '2026-10-11';
+
+export function guideDates(guide: Guide) {
+  const published = guide.publishedAt || publishedDate;
+  return { published, modified: guide.updatedAt || published };
+}
+
+export function guideTopic(guide: Guide) {
+  if (/WORKOUT|HOME/.test(guide.category)) return 'WORKOUT PLANNING';
+  if (/NUTRITION|MEAL/.test(guide.category)) return 'NUTRITION TRACKING';
+  return 'CHOOSING AN APP';
+}
 
 const originalGuides: Guide[] = [
   {
@@ -407,6 +424,6 @@ const workflowGuides: Guide[] = [
   },
 ];
 
-export const guides: Guide[] = [...originalGuides, ...acquisitionGuides, ...workflowGuides];
+export const guides: Guide[] = [...originalGuides, ...acquisitionGuides, ...workflowGuides, ...choosingGuides, ...trainingGuides, ...nutritionGuides];
 
 export function findGuide(slug: string) { return guides.find((guide) => guide.slug === slug); }

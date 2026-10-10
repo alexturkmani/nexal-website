@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { BrandMark, PlayButton, SiteFooter } from '../../components/MarketingUi';
 import { seoPageMetadata, siteUrl } from '../../site-config';
 import GuideCards from '../GuideCards';
-import { guides, findGuide, publishedDate } from '../content';
+import { guides, findGuide, guideDates } from '../content';
 
 export const dynamicParams = false;
 export function generateStaticParams() { return guides.map(({ slug }) => ({ slug })); }
@@ -13,15 +13,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const guide = findGuide((await params).slug);
   if (!guide) return {};
   const metadata = seoPageMetadata(`/guides/${guide.slug}`, guide.metaTitle, guide.description);
-  return { ...metadata, openGraph: { ...metadata.openGraph, type: 'article', publishedTime: publishedDate, modifiedTime: publishedDate, authors: ['Nexal'] } };
+  const dates = guideDates(guide);
+  return { ...metadata, openGraph: { ...metadata.openGraph, type: 'article', publishedTime: dates.published, modifiedTime: dates.modified, authors: ['Nexal'] } };
 }
 
 export default async function GuidePage({ params }: { params: Promise<{ slug: string }> }) {
   const guide = findGuide((await params).slug);
   if (!guide) notFound();
+  const dates = guideDates(guide);
   const url = `${siteUrl}/guides/${guide.slug}`;
   const schema = { '@context': 'https://schema.org', '@graph': [
-    { '@type': 'Article', '@id': `${url}#article`, headline: guide.title, description: guide.description, mainEntityOfPage: url, datePublished: publishedDate, dateModified: publishedDate, inLanguage: 'en', image: `${siteUrl}/og.png`, author: { '@type': 'Organization', name: 'Nexal', url: siteUrl }, publisher: { '@type': 'Organization', name: 'Nexal', url: siteUrl, logo: { '@type': 'ImageObject', url: `${siteUrl}/nexal-logo.png` } } },
+    { '@type': 'Article', '@id': `${url}#article`, headline: guide.title, description: guide.description, mainEntityOfPage: url, datePublished: dates.published, dateModified: dates.modified, inLanguage: 'en', image: `${siteUrl}/og.png`, author: { '@type': 'Organization', name: 'Nexal', url: siteUrl }, publisher: { '@type': 'Organization', name: 'Nexal', url: siteUrl, logo: { '@type': 'ImageObject', url: `${siteUrl}/nexal-logo.png` } } },
     { '@type': 'BreadcrumbList', itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
       { '@type': 'ListItem', position: 2, name: 'Guides', item: `${siteUrl}/guides` },
@@ -31,7 +33,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
   return <main className="guides-page">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }} />
     <nav className="nav shell" aria-label="Main navigation"><Link href="/" className="brand" aria-label="Nexal home"><BrandMark /></Link><div className="nav-links"><Link href="/guides">All Guides</Link><Link href={guide.feature.href}>App Features</Link></div><PlayButton compact placement={`${guide.slug}_nav`} /></nav>
-    <header className="guide-hero shell"><nav className="guide-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span aria-hidden="true">/</span><Link href="/guides">Guides</Link><span aria-hidden="true">/</span><span>{guide.category.toLowerCase()}</span></nav><span className="section-kicker">{guide.category}</span><h1>{guide.title}</h1><p>{guide.intro}</p><div className="guide-byline"><span>By Nexal</span><time dateTime={publishedDate}>6 October 2026</time><span>{guide.readTime}</span></div></header>
+    <header className="guide-hero shell"><nav className="guide-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span aria-hidden="true">/</span><Link href="/guides">Guides</Link><span aria-hidden="true">/</span><span>{guide.category.toLowerCase()}</span></nav><span className="section-kicker">{guide.category}</span><h1>{guide.title}</h1><p>{guide.intro}</p><div className="guide-byline"><span>By Nexal</span><time dateTime={dates.published}>{new Intl.DateTimeFormat('en-AU', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${dates.published}T00:00:00Z`))}</time><span>{guide.readTime}</span></div></header>
     <div className="guide-entry-cta shell"><PlayButton placement={`${guide.slug}_intro`} /><p>Download on Android, create your free account and start tracking. AI planning is optional Premium.</p></div>
     <div className="guide-layout shell">
       <aside className="guide-sidebar"><nav aria-label="In this guide"><h2>In this guide</h2>{guide.sections.map(section => <a key={section.id} href={`#${section.id}`}>{section.title}</a>)}</nav><div className="guide-sidebar-offer"><strong>Start with free tracking.</strong><p>AI planning is optional Premium.</p><PlayButton placement={`${guide.slug}_sidebar`} /></div></aside>

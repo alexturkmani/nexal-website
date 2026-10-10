@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { siteUrl } from './site-config';
-import { guides, publishedDate } from './guides/content';
+import { guides, guideDates, libraryUpdatedDate } from './guides/content';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -10,7 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/workout-meal-planner-app`, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${siteUrl}/calorie-macro-tracker`, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${siteUrl}/privacy`, changeFrequency: 'yearly', priority: 0.2 },
-    { url: `${siteUrl}/guides`, lastModified: publishedDate, changeFrequency: 'monthly', priority: 0.7 },
-    ...guides.map(guide => ({ url: `${siteUrl}/guides/${guide.slug}`, lastModified: publishedDate, changeFrequency: 'monthly' as const, priority: 0.7 })),
+    { url: `${siteUrl}/about`, lastModified: '2026-10-11', changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${siteUrl}/guides`, lastModified: libraryUpdatedDate, changeFrequency: 'monthly', priority: 0.7 },
+    ...guides.map(guide => ({ url: `${siteUrl}/guides/${guide.slug}`, lastModified: guideDates(guide).modified, changeFrequency: 'monthly' as const, priority: 0.7 })),
   ];
 }

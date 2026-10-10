@@ -35,7 +35,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body style={{ fontFamily: 'Inter, Segoe UI, Arial, sans-serif' }}>
-        {children}
+        <a className="skip-link" href="#main-content">Skip to content</a>
+        <div id="main-content">{children}</div>
       </body>
     </html>
   );
