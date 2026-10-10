@@ -19,6 +19,15 @@ function load(file) {
   return contentModule.exports;
 }
 const { guides, guideDates } = load(fileURLToPath(new URL('../app/guides/content.ts', import.meta.url)));
+const { searchGuides } = load(fileURLToPath(new URL('../app/guides/search-guides.ts', import.meta.url)));
+assert.equal(searchGuides(guides, '').length, guides.length, 'All guides available before filtering');
+assert.equal(searchGuides(guides, '  ').length, guides.length, 'Whitespace does not hide guides');
+assert.ok(searchGuides(guides, 'WORKOUT').length > 0, 'Case-insensitive matching');
+assert.equal(searchGuides(guides, 'zznonexistentguidezz').length, 0, 'No-results search');
+const sampleGuides = [{ title: 'Warm-up sets', description: 'A useful workout log', category: 'WORKOUT PLANNING' }];
+assert.equal(searchGuides(sampleGuides, '  SETS   log ').length, 1, 'All query terms match across title and description');
+assert.equal(searchGuides(sampleGuides, 'sets lunch').length, 0, 'Unrelated term excludes result');
+assert.equal(sampleGuides.length, 1, 'Search does not mutate source list');
 const slugs = new Set();
 const titles = new Set();
 const descriptions = new Set();
@@ -46,10 +55,20 @@ for (const guide of guides) {
   const words = text.trim().split(/\s+/).length;
   if (guide.publishedAt === '2026-10-11') assert.ok(words >= 400, `${guide.slug}: substantive content (${words} words)`);
   const dates = guideDates(guide);
+  assert.match(dates.published, /^\d{4}-\d{2}-\d{2}$/, `${guide.slug}: ISO publication date`);
   assert.ok(dates.modified >= dates.published, `${guide.slug}: truthful date sequence`);
   assert.ok(guide.feature.href.startsWith('/') && guide.faqs.length >= 2 && guide.sources.length, `${guide.slug}: feature, FAQ and sources`);
+  for (const source of guide.sources) {
+    assert.ok(source.href.startsWith('/') && !source.href.startsWith('//') || new URL(source.href).protocol === 'https:', `${guide.slug}: local or secure source URL`);
+  }
   console.log(`PASS content ${guide.slug}: ${words} words`);
 }
 const added = guides.filter(guide => guide.publishedAt === '2026-10-11').length;
 if (process.env.EXPECT_NEW_GUIDES) assert.equal(added, Number(process.env.EXPECT_NEW_GUIDES), 'Requested new guide count');
-console.log(`PASS ${guides.length} guides; ${added} new. Automated checks supplement, not replace, editorial review.`);
+if (process.env.EXPECT_GUIDE_COUNT) assert.equal(guides.length, Number(process.env.EXPECT_GUIDE_COUNT), 'Total guide count');
+if (process.env.EXPECT_BATCH_ID) {
+  const batch = guides.filter(guide => guide.contentBatch === process.env.EXPECT_BATCH_ID);
+  assert.equal(batch.length, Number(process.env.EXPECT_BATCH_SIZE), 'Requested expansion batch count');
+  console.log(`PASS batch ${process.env.EXPECT_BATCH_ID}: ${batch.length} articles`);
+}
+console.log(`PASS ${guides.length} guides; ${added} published on 2026-10-11. Automated checks supplement, not replace, editorial review.`);

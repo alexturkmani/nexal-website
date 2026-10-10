@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import GuideCard from './GuideCard';
 import { guides, guideTopic } from './content';
 import './guides.css';
 
@@ -15,10 +15,5 @@ export default function GuideCards({ exclude, category, limit = 3 }: { exclude?:
     candidates.splice(0, candidates.length, ...rotated, ...candidates.filter(guide => guideTopic(guide) !== topic));
   }
   return <div className="guide-cards">{candidates.slice(0, limit).map((guide, index) =>
-    <Link prefetch={false} className="guide-card" href={`/guides/${guide.slug}`} key={guide.slug}>
-      <span className="guide-card-index" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-      <span className="section-kicker">{guide.category}</span>
-      <h3>{guide.title}</h3><p>{guide.description}</p>
-      <span className="guide-card-link">Read the guide <span aria-hidden="true">→</span></span>
-    </Link>)}</div>;
+    <GuideCard guide={guide} index={index} key={guide.slug} />)}</div>;
 }

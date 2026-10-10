@@ -42,6 +42,8 @@ for (const slug of slugs) {
 for (const path of ['/', '/guides', '/ai-workout-planner', '/ai-meal-planner', '/calorie-macro-tracker', '/workout-meal-planner-app']) {
   const document = await html(path);
   if (path === '/guides') {
+    assert.ok(document.includes('id="guide-query"'), 'Guide search is server rendered');
+    assert.ok(document.includes('aria-live="polite"'), 'Guide search announces result counts');
     for (const slug of slugs) assert.ok(document.includes(`href="/guides/${slug}"`), `${path}: crawlable link to ${slug}`);
   } else assert.ok(document.includes('href="/guides/'), `${path}: crawlable guide links`);
   console.log(`PASS ${path}: linked guide cluster`);

@@ -1,6 +1,9 @@
 import { choosingGuides } from './choosing-guides';
 import { trainingGuides } from './training-guides';
 import { nutritionGuides } from './nutrition-guides';
+import { goalGuides } from './goal-guides';
+import { trainingDetailGuides } from './training-detail-guides';
+import { foodDetailGuides } from './food-detail-guides';
 
 export type GuideSection = {
   id: string;
@@ -10,6 +13,7 @@ export type GuideSection = {
   example?: { title: string; headers: string[]; rows: string[][]; caption: string };
 };
 export type Guide = {
+  contentBatch?: string;
   publishedAt?: string; updatedAt?: string;
   slug: string; title: string; metaTitle: string; description: string; category: string;
   readTime: string; intro: string; takeaway: string; sections: GuideSection[];
@@ -26,8 +30,8 @@ export function guideDates(guide: Guide) {
   return { published, modified: guide.updatedAt || published };
 }
 
-export function guideTopic(guide: Guide) {
-  if (/WORKOUT|HOME/.test(guide.category)) return 'WORKOUT PLANNING';
+export function guideTopic(guide: Pick<Guide, 'category'>) {
+  if (/WORKOUT|HOME|GYM/.test(guide.category)) return 'WORKOUT PLANNING';
   if (/NUTRITION|MEAL/.test(guide.category)) return 'NUTRITION TRACKING';
   return 'CHOOSING AN APP';
 }
@@ -424,6 +428,6 @@ const workflowGuides: Guide[] = [
   },
 ];
 
-export const guides: Guide[] = [...originalGuides, ...acquisitionGuides, ...workflowGuides, ...choosingGuides, ...trainingGuides, ...nutritionGuides];
+export const guides: Guide[] = [...originalGuides, ...acquisitionGuides, ...workflowGuides, ...choosingGuides, ...trainingGuides, ...nutritionGuides, ...goalGuides, ...trainingDetailGuides, ...foodDetailGuides];
 
 export function findGuide(slug: string) { return guides.find((guide) => guide.slug === slug); }

@@ -15,6 +15,7 @@ assert.ok(!/Disallow:\s*\/\s*$/m.test(robots));
 const sitemap = await get('/sitemap.xml');
 const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => decode(match[1]));
 assert.equal(new Set(urls).size, urls.length, 'No duplicate sitemap URLs');
+if (process.env.EXPECT_SITEMAP_COUNT) assert.equal(urls.length, Number(process.env.EXPECT_SITEMAP_COUNT), 'Expected published sitemap URL count');
 const documents = new Map();
 const titles = new Set();
 const descriptions = new Set();
@@ -49,10 +50,15 @@ for (const url of urls) {
   console.log(`PASS ${path}: status, indexability, canonical, unique metadata, headings, schema, social, images`);
 }
 const seenLinks = new Set();
+const guideReferrers = new Map();
 for (const [path, html] of documents) {
   for (const match of html.matchAll(/href="(\/[^" ]*|#[^" ]*)"/g)) {
     const href = decode(match[1]);
     const url = new URL(href, `${base}${path}`);
+    if (url.pathname.startsWith('/guides/') && url.pathname !== path) {
+      if (!guideReferrers.has(url.pathname)) guideReferrers.set(url.pathname, new Set());
+      guideReferrers.get(url.pathname).add(path);
+    }
     if (url.hash && documents.has(url.pathname)) {
       const id = decodeURIComponent(url.hash.slice(1));
       assert.ok(documents.get(url.pathname).includes(`id="${id}"`), `${path}: anchor ${href}`);
@@ -62,6 +68,9 @@ for (const [path, html] of documents) {
     const response = await fetch(`${base}${url.pathname}`);
     assert.equal(response.status, 200, `${path}: internal link ${href}`);
   }
+}
+for (const path of documents.keys()) {
+  if (path.startsWith('/guides/')) assert.ok(guideReferrers.get(path)?.size >= 2, `${path}: linked from hub and another relevant page`);
 }
 for (const asset of [...assets, '/og.png', '/nexal-logo.png']) {
   const response = await fetch(`${base}${asset}`);
