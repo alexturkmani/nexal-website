@@ -5,7 +5,8 @@ const base = (process.env.SEO_CHECK_URL || 'http://localhost:3100').replace(/\/$
 const canonicalBase = 'https://www.nexalfitness.com';
 const files = (await readdir(new URL('../app/guides/', import.meta.url))).filter(file => file.endsWith('.ts'));
 const source = (await Promise.all(files.map(file => readFile(new URL(`../app/guides/${file}`, import.meta.url), 'utf8')))).join('\n');
-const slugs = [...source.matchAll(/slug: '([^']+)'/g)].map(match => match[1]);
+// Guide entries start a line with `slug:`; read-next links (`{ slug: ... }`) are inline and excluded.
+const slugs = [...source.matchAll(/^\s+slug: '([^']+)'/gm)].map(match => match[1]);
 assert.equal(new Set(slugs).size, slugs.length, 'Unique guide URLs');
 const decode = value => value.replace(/&amp;/g, '&').replace(/&#x27;/g, "'").replace(/&quot;/g, '"');
 async function html(path) {

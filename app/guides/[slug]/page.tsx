@@ -34,6 +34,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
   const path = `/guides/${guide.slug}`;
   const topic = guideTopic(guide);
   const links = contextualLinks(guide);
+  const seeAlso = (guide.seeAlso ?? []).filter(item => findGuide(item.slug));
   // Mid-article callout sits after the middle section, before the second half of the guide.
   const midAfter = Math.ceil(guide.sections.length / 2) - 1;
   const faqs = guide.faqs.map(({ question, answer }) => ({ question, answer }));
@@ -57,6 +58,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
       <aside className="guide-sidebar"><nav aria-label="In this guide"><h2>In this guide</h2>{guide.sections.map(section => <a key={section.id} href={`#${section.id}`}>{section.title}</a>)}</nav><div className="guide-sidebar-offer"><strong>Start with free tracking.</strong><p>AI planning is optional Premium.</p><PlayButton placement={`${guide.slug}_sidebar`} /></div></aside>
       <article className="guide-article" aria-label={guide.title}>
         <div className="guide-takeaway"><span className="section-kicker">THE SHORT VERSION</span><p>{guide.takeaway}</p></div>
+        {seeAlso.length > 0 && <nav className="guide-see-also" aria-label="Read next"><span className="section-kicker">READ NEXT</span><ul>{seeAlso.map(item => <li key={item.slug}><Link href={`/guides/${item.slug}`}>{item.label}</Link></li>)}</ul></nav>}
         {guide.sections.map((section, sectionIndex) => <Fragment key={section.id}><section id={section.id}><h2>{section.title}</h2>{section.paragraphs.map((paragraph, index) => <LinkedParagraph key={paragraph} text={paragraph} link={links.get(`${section.id}:${index}`)} />)}{section.example && <figure className="guide-example"><figcaption>{section.example.title}</figcaption><div className="guide-table-scroll" tabIndex={0} role="region" aria-label={section.example.title}><table><thead><tr>{section.example.headers.map(header => <th scope="col" key={header}>{header}</th>)}</tr></thead><tbody>{section.example.rows.map(row => <tr key={row[0]}>{row.map((cell,index) => index === 0 ? <th scope="row" key={index}>{cell}</th> : <td key={index}>{cell}</td>)}</tr>)}</tbody></table></div><p>{section.example.caption}</p></figure>}{section.bullets && <ul>{section.bullets.map(bullet => <li key={bullet}>{bullet}</li>)}</ul>}</section>{sectionIndex === midAfter && <AppFeatureCallout placement="mid" topic={topic} slug={guide.slug} />}</Fragment>)}
         <AppFeatureCallout placement="end" topic={topic} slug={guide.slug} feature={guide.feature} />
         <section className="guide-faq"><h2>Frequently asked questions</h2>{guide.faqs.map(faq => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</section>

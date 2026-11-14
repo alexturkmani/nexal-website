@@ -313,6 +313,7 @@ export const nutritionGuides: Guide[] = [
   {
     ...publication,
     slug: 'food-barcode-scanner-limitations',
+    seeAlso: [{ slug: 'barcode-scanner-calorie-tracker-android', label: 'A scan, check and log routine for packaged food' }],
     title: 'Food barcode scanner limitations: what a successful scan does not verify',
     metaTitle: 'Food Barcode Scanner Limits and Checks',
     description: 'Check a scanned food’s identity, nutrition basis and portion, and understand why barcode lookup is not an ingredient or allergy guarantee.',

@@ -4,6 +4,7 @@ import { nutritionGuides } from './nutrition-guides';
 import { goalGuides } from './goal-guides';
 import { trainingDetailGuides } from './training-detail-guides';
 import { foodDetailGuides } from './food-detail-guides';
+import { buyerIntentGuides } from './buyer-intent-guides';
 
 export type GuideSection = {
   id: string;
@@ -20,6 +21,8 @@ export type Guide = {
   feature: { href: string; label: string; text: string };
   sources: { href: string; label: string }[];
   faqs: { question: string; answer: string }[];
+  /** Hand-picked related guides shown under the takeaway as "Read next". */
+  seeAlso?: { slug: string; label: string }[];
 };
 
 export const publishedDate = '2026-10-06';
@@ -428,6 +431,6 @@ const workflowGuides: Guide[] = [
   },
 ];
 
-export const guides: Guide[] = [...originalGuides, ...acquisitionGuides, ...workflowGuides, ...choosingGuides, ...trainingGuides, ...nutritionGuides, ...goalGuides, ...trainingDetailGuides, ...foodDetailGuides];
+export const guides: Guide[] = [...originalGuides, ...acquisitionGuides, ...workflowGuides, ...choosingGuides, ...trainingGuides, ...nutritionGuides, ...goalGuides, ...trainingDetailGuides, ...foodDetailGuides, ...buyerIntentGuides];
 
 export function findGuide(slug: string) { return guides.find((guide) => guide.slug === slug); }

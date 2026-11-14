@@ -201,6 +201,7 @@ export const choosingGuides: Guide[] = [
   },
   {
     slug: 'fitness-app-shift-workers',
+    seeAlso: [{ slug: 'workout-and-meal-plan-for-shift-workers', label: 'Workout and meal planning across rotating shifts' }],
     title: 'Choosing a fitness app for shift workers with changing days',
     metaTitle: 'Fitness App for Shift Workers',
     description: 'Test workout and meal logging around overnight shifts, changing rosters and calendar boundaries without forcing your routine into a fixed week.',

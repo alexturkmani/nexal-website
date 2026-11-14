@@ -53,7 +53,12 @@ for (const guide of guides) {
   }
   const text = [guide.intro, guide.takeaway, ...guide.sections.flatMap(section => [section.title, ...section.paragraphs, ...(section.bullets || []), section.example ? JSON.stringify(section.example) : ''])].join(' ');
   const words = text.trim().split(/\s+/).length;
-  if (guide.publishedAt === '2026-10-11') assert.ok(words >= 400, `${guide.slug}: substantive content (${words} words)`);
+  // Guides published from the October expansion onwards must be substantive.
+  if (guide.publishedAt && guide.publishedAt >= '2026-10-11') assert.ok(words >= 400, `${guide.slug}: substantive content (${words} words)`);
+  for (const item of guide.seeAlso || []) {
+    assert.ok(guides.some(other => other.slug === item.slug), `${guide.slug}: read-next link resolves (${item.slug})`);
+    assert.notEqual(item.slug, guide.slug, `${guide.slug}: read-next does not link to itself`);
+  }
   const dates = guideDates(guide);
   assert.match(dates.published, /^\d{4}-\d{2}-\d{2}$/, `${guide.slug}: ISO publication date`);
   assert.ok(dates.modified >= dates.published, `${guide.slug}: truthful date sequence`);

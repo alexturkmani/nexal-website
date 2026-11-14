@@ -36,3 +36,9 @@
 .guide-product .guide-callout-links{margin:10px 0 18px}
 .guide-product .guide-callout-links a{color:var(--lime)}
 @media(max-width:600px){.guide-callout{padding:18px}.guide-callout-links{flex-direction:column;gap:8px}}
+
+/* Read next: hand-picked related guides under the takeaway. */
+.guide-see-also{margin:-20px 0 40px;padding:16px 20px;border:1px solid #dce4d8;border-radius:16px;background:white}
+.guide-see-also .section-kicker{font-size:11px}
+.guide-see-also ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:0}
+.guide-see-also a{display:inline-flex;align-items:center;min-height:48px;font-weight:700;color:#0f7d4e;text-decoration:underline;text-underline-offset:4px}
