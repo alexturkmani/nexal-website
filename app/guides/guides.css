@@ -20,3 +20,19 @@
 .guide-sidebar nav a{display:flex;align-items:center;min-height:48px}
 .guide-faq summary{min-height:48px;padding-block:10px;box-sizing:border-box}
 .home-guides>.text-link{display:inline-block}
+
+/* Contextual links inside article copy (inline, so exempt from the 48px target rule). */
+.guide-article section>p a{color:#0f7d4e;font-weight:650;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.guide-article section>p a:hover{color:#0a5c39;text-decoration-thickness:2px}
+
+/* App feature callouts: a quiet mid-article card and the dark closing card. */
+.guide-callout{margin:8px 0 44px;padding:22px 24px;border:1px solid #d6e2d0;border-left:4px solid var(--lime);border-radius:18px;background:#fbfdf8}
+.guide-callout .section-kicker{font-size:11px}
+.guide-callout-heading{display:block;font-size:20px;line-height:1.25;letter-spacing:-.02em;margin:8px 0 6px}
+.guide-callout p{font-size:15px;line-height:1.65;color:var(--muted);margin:0}
+.guide-callout-links{display:flex;flex-wrap:wrap;gap:8px 22px;margin:12px 0 4px}
+.guide-callout-links a{display:inline-flex;align-items:center;gap:6px;min-height:48px;font-weight:750;font-size:15px;color:#0f7d4e;text-decoration:underline;text-underline-offset:4px}
+.guide-product .guide-product-text{margin:10px 0 0}
+.guide-product .guide-callout-links{margin:10px 0 18px}
+.guide-product .guide-callout-links a{color:var(--lime)}
+@media(max-width:600px){.guide-callout{padding:18px}.guide-callout-links{flex-direction:column;gap:8px}}
