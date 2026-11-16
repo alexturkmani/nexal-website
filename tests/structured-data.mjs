@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 // per page, resolvable @id references, and page-type specific requirements.
 const base = (process.env.SEO_CHECK_URL || 'http://localhost:3100').replace(/\/$/, '');
 const origin = 'https://www.nexalfitness.com';
-const landing = ['/', '/workout-meal-planner-app', '/ai-workout-planner', '/ai-meal-planner', '/calorie-macro-tracker', '/free-calorie-and-macro-tracker', '/free-workout-tracker-app', '/compare/myfitnesspal-alternative', '/compare/fitbod-alternative'];
+const landing = ['/', '/workout-meal-planner-app', '/ai-workout-planner', '/ai-meal-planner', '/free-calorie-and-macro-tracker', '/free-workout-tracker-app', '/compare/myfitnesspal-alternative', '/compare/fitbod-alternative'];
 const decode = value => value.replace(/&amp;/g, '&').replace(/&#x27;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 const types = node => [node['@type']].flat();
 const isDate = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(value));

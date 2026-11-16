@@ -30,7 +30,7 @@ export const foodDetailGuides: Guide[] = [
         'When copying that recent meal, confirm both the product and how you handled its liquid. A lunch made with the whole tin differs from one made with half the drained contents. Premium barcode scanning is optional and still needs this check. Finish when the food, label basis and eaten quantity agree, without expecting the download to make uncertain packing-liquid estimates exact.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Try Nexal’s free manual meal tracker', text: 'Record the edible portion after checking the tin’s nutrition basis.' },
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Try Nexal’s free manual meal tracker', text: 'Record the edible portion after checking the tin’s nutrition basis.' },
     sources: [{ href: 'https://www.legislation.gov.au/F2015L00395/latest/text', label: 'Australian Food Standards Code: nutrition information requirements' }],
     faqs: [
       { question: 'Should I always use the drained weight?', answer: 'Use it when you ate drained contents and the nutrition values describe drained food. Other products or retained liquid may need a different basis.' },
@@ -64,7 +64,7 @@ export const foodDetailGuides: Guide[] = [
         'Copying a recent meal can save work when breakfast repeats, but review the preparation before accepting the same totals. A water-based version, a milk-based version and a larger dry serving need separate calculations. Premium AI macro estimates are optional; they do not remove the need to check which additions the original label already includes. Test the manual routine with your actual breakfast first.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Log your actual breakfast with Nexal', text: 'Use free manual tracking for a checked cereal or mix calculation.' },
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Log your actual breakfast with Nexal', text: 'Use free manual tracking for a checked cereal or mix calculation.' },
     sources: [{ href: 'https://www.legislation.gov.au/F2015L00395/latest/text', label: 'Australian Food Standards Code: reconstituted and prepared nutrition information' }],
     faqs: [
       { question: 'Does prepared always mean prepared with milk?', answer: 'No. Read the product’s preparation instructions and nutrition footnotes. The prepared basis may use water or specified additional ingredients.' },
@@ -98,7 +98,7 @@ export const foodDetailGuides: Guide[] = [
         'Test the shortcut against three actual situations: the usual home cup, a different cafe size and a refill. You need a routine that distinguishes them without lengthy reconstruction. Premium AI macro estimates and barcode scanning are optional, and neither establishes an unobserved milk pour. Choose the workflow by whether it helps you describe your drinks clearly, rather than expecting a cup name to settle the arithmetic.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Try free drink logging in Nexal', text: 'Record changing drink additions with a simple manual meal workflow.' },
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Try free drink logging in Nexal', text: 'Record changing drink additions with a simple manual meal workflow.' },
     sources: [{ href: 'https://www.foodstandards.gov.au/consumer/labelling/panels', label: 'FSANZ: nutrition information per serving and per 100 mL' }],
     faqs: [
       { question: 'Can I double a small coffee entry for a large one?', answer: 'Only when the actual recipe doubles. Cup sizes, milk amounts and syrup quantities may change in different proportions.' },
@@ -166,7 +166,7 @@ export const foodDetailGuides: Guide[] = [
         'Keep the two versions clear in your companion notes: original batch and second-day batch. Nexal Premium AI meal plans or macro estimates are optional; this method does not require automatic leftover detection or recipe versioning. Before saving, ask whether today’s total includes only today’s eaten share and whether any remaining food still belongs to a future meal rather than this one.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Record changed leftover meals in Nexal', text: 'Use free manual tracking for today’s portion after calculating the new batch.' },
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Record changed leftover meals in Nexal', text: 'Use free manual tracking for today’s portion after calculating the new batch.' },
     sources: [{ href: 'https://www.foodstandards.gov.au/business/labelling/nutrition-panel-calculator/weight-change-factors', label: 'FSANZ: recipe weight changes through moisture gains and losses' }],
     faqs: [
       { question: 'Can I copy yesterday’s leftovers entry unchanged?', answer: 'Only if today’s food and portion still match. New ingredients, a different remaining share or a changed preparation can require a new calculation.' },
@@ -200,7 +200,7 @@ export const foodDetailGuides: Guide[] = [
         'Copy a recent meal when it truly repeats, preserving the checked calculation rather than recalculating it with a different rounding rule each time. Premium AI macro estimates remain estimates even if they display precise-looking numbers. Before finishing, ask whether your entry communicates the source and portion honestly. A tidy number can be useful without implying that your diary measures intake to a fraction of a gram.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Keep readable meal records with Nexal', text: 'Try free manual logging after checking your portion arithmetic.' },
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Keep readable meal records with Nexal', text: 'Try free manual logging after checking your portion arithmetic.' },
     sources: [{ href: 'https://www.fda.gov/regulatory-information/search-fda-guidance-documents/guidance-industry-guide-developing-and-using-data-bases-nutrition-labeling', label: 'FDA: nutrition label values and rounding guidance' }],
     faqs: [
       { question: 'Do more decimal places mean a more accurate diary?', answer: 'No. Extra digits may only reflect calculator output. Accuracy still depends on the food source, portion and assumptions.' },
@@ -234,7 +234,7 @@ export const foodDetailGuides: Guide[] = [
         'When copying a recent meal, compare the new piece with the original reference before accepting its nutrition. If the source or size changes, revise the calculation instead of copying purely by food name. Premium AI macro estimates are optional and cannot turn an unspecified piece into a measured portion. Judge the app by whether this simple routine fits your actual shopping habits.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Try a practical food diary in Nexal', text: 'Use free manual tracking for measured or clearly estimated individual items.' },
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Try a practical food diary in Nexal', text: 'Use free manual tracking for measured or clearly estimated individual items.' },
     sources: [{ href: 'https://www.foodstandards.gov.au/consumer/labelling/panels', label: 'FSANZ: nutrition panels and exemptions for some unpackaged foods' }],
     faqs: [
       { question: 'Is one piece a reliable serving unit?', answer: 'It can be when the item and its nutrition definition are consistent. Variable sizes or recipes require a weight or an acknowledged estimate.' },
@@ -268,7 +268,7 @@ export const foodDetailGuides: Guide[] = [
         'Premium AI macro estimates are optional starting points, not verification of hidden buffet recipes. Once your best available reconstruction is represented, close the entry. A later correction is useful when new information arrives, such as the venue identifying a dish, but repeated guessing does not necessarily improve it. The app’s useful role is maintaining an understandable record, without guaranteeing an exact total from uncertain portions.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Keep a transparent buffet record in Nexal', text: 'Try free manual logging with your own clearly stated portion assumptions.' },
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Keep a transparent buffet record in Nexal', text: 'Try free manual logging with your own clearly stated portion assumptions.' },
     sources: [{ href: 'https://www.niddk.nih.gov/health-information/weight-management/healthy-eating-physical-activity-for-life/health-tips-for-adults', label: 'NIDDK: sample diary including shared and unfinished meals' }],
     faqs: [
       { question: 'Should I enter a range for the buffet meal?', answer: 'Use a range in companion notes to explore uncertain assumptions, then record a supported working estimate. This guide does not claim a range-entry field in Nexal.' },
@@ -302,7 +302,7 @@ export const foodDetailGuides: Guide[] = [
         'Before copying a recent meal, ask whether its package amount and calculation basis still match. If they do not, revise today’s entry rather than carrying forward the old whole-pack total. Premium barcode scanning is optional and should be checked against the pack. One careful update can provide a useful new reference without treating every older record as an error.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Update your everyday food record in Nexal', text: 'Use free manual meal tracking with the label from the product you actually ate.' },
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Update your everyday food record in Nexal', text: 'Use free manual meal tracking with the label from the product you actually ate.' },
     sources: [{ href: 'https://www.foodstandards.gov.au/consumer/labelling/ingredients', label: 'FSANZ: ingredient lists and percentage labelling' }, { href: 'https://www.foodstandards.gov.au/consumer/labelling/panels', label: 'FSANZ: nutrition panel serving and quantity bases' }],
     faqs: [
       { question: 'Does a smaller per-serving number prove reformulation?', answer: 'No. First compare the serving sizes and convert to a common quantity. A different serving alone can explain the change.' },
@@ -370,7 +370,7 @@ export const foodDetailGuides: Guide[] = [
         'Download Nexal for Android, create your account and try free manual meal and macro logging with the checked portion totals. Copy a recent meal only when the next kit and preparation match. Premium barcode scanning can help identify a product but still requires checking the panel boundary. The useful first test is one assembled meal represented once, including actual extras and excluding ingredients you did not consume.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Log an assembled meal-kit portion in Nexal', text: 'Try free manual tracking with a clear boundary around included ingredients and extras.' },
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Log an assembled meal-kit portion in Nexal', text: 'Try free manual tracking with a clear boundary around included ingredients and extras.' },
     sources: [{ href: 'https://www.legislation.gov.au/F2015L00395/latest/text', label: 'Australian Food Standards Code: nutrition information for food as prepared' }],
     faqs: [
       { question: 'Does a meal-kit panel always include ingredients I supply?', answer: 'No. Read the panel heading and preparation assumptions. It may describe supplied contents or a prepared recipe with specified additions.' },
@@ -404,7 +404,7 @@ export const foodDetailGuides: Guide[] = [
         'If the remaining friction is identifying packaged products or getting a starting estimate, evaluate Premium barcode scanning or AI macro estimates against that specific problem. Premium AI meal plans address planning, which is a different time cost. Choose based on whether the feature shortens your real routine after review, without expecting any paid tool to eliminate checking or guarantee a two-minute entry.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Time a familiar meal entry in Nexal', text: 'Try free manual tracking and recent-meal copying before evaluating optional Premium tools.' },
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Time a familiar meal entry in Nexal', text: 'Try free manual tracking and recent-meal copying before evaluating optional Premium tools.' },
     sources: [{ href: 'https://www.niddk.nih.gov/health-information/weight-management/healthy-eating-physical-activity-for-life/health-tips-for-adults', label: 'NIDDK: food and beverage diary example' }],
     faqs: [
       { question: 'Does Nexal guarantee a two-minute meal entry?', answer: 'No. Two minutes is an illustrative workflow target. Actual time depends on the meal, information available and your entry process.' },
@@ -438,7 +438,7 @@ export const foodDetailGuides: Guide[] = [
         'Premium AI macro estimates are optional and cannot establish who ate which portion of a shared platter. Keep the final entry at the confidence your observation supports. You can stop once your known pieces and reasonable estimates are represented. The practical app test is whether this personal routine is manageable, without turning a social meal into a measurement exercise for everyone present.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Log your own platter portion in Nexal', text: 'Try free manual meal tracking with a personal portion estimate.' },
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Log your own platter portion in Nexal', text: 'Try free manual meal tracking with a personal portion estimate.' },
     sources: [{ href: 'https://www.foodstandards.gov.au/consumer/labelling/panels', label: 'FSANZ: nutrition information and unpackaged-food exceptions' }],
     faqs: [
       { question: 'Can I divide the platter total by the number of diners?', answer: 'Only if that reasonably describes your actual share. Shared platters often have unequal portions, refills and different ingredient choices.' },
@@ -472,7 +472,7 @@ export const foodDetailGuides: Guide[] = [
         'Before copying a recent meal, check whether the current pack has the same size and serving count. Premium barcode scanning is optional and does not establish how much of the container you ate. Finish by reading the record as a sentence: this product, this container reference, this consumed share. That check catches a whole-package figure accidentally treated as a single-serving figure before it becomes a recurring error.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Check a packaged-food entry in Nexal', text: 'Use free manual tracking after matching the label column to your portion.' },
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Check a packaged-food entry in Nexal', text: 'Use free manual tracking after matching the label column to your portion.' },
     sources: [{ href: 'https://www.fda.gov/food/nutrition-facts-label/how-understand-and-use-nutrition-facts-label', label: 'FDA: serving information and dual-column nutrition labels' }],
     faqs: [
       { question: 'Should I multiply per-container calories by the serving count?', answer: 'No. A per-container figure already describes that container. Multiply per-serving values by the number of servings eaten instead.' },
@@ -506,7 +506,7 @@ export const foodDetailGuides: Guide[] = [
         'When copying a recent meal abroad, confirm the product, serving size and unit rather than trusting a familiar brand name. Premium barcode scanning is optional and still needs comparison with the current package. Close the entry after checking that the food amount and nutrition basis use compatible quantities. The useful result is a readable travel record, without pretending a unit conversion removes uncertainty about an unfamiliar recipe.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Try a clear travel meal record in Nexal', text: 'Use free manual tracking after checking the local label and portion units.' },
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Try a clear travel meal record in Nexal', text: 'Use free manual tracking after checking the local label and portion units.' },
     sources: [{ href: 'https://www.nist.gov/pml/owm/metric-si/unit-conversion/approximate-conversions-us-customary-measures-metric', label: 'NIST: approximate ounce and US fluid-ounce metric conversions' }],
     faqs: [
       { question: 'Are ounces and fluid ounces interchangeable?', answer: 'No. Food weight ounces describe mass, while fluid ounces describe volume. Use a matching conversion and the metric equivalent on the label where available.' },

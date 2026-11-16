@@ -31,7 +31,7 @@ export const nutritionGuides: Guide[] = [
         'When copying a recent meal, check whether the measured state and portion still match. A useful final question is whether another person could tell what your quantity means from the source you used. Clear assumptions make later comparisons more useful than a long string of decimal places attached to an uncertain entry.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Explore manual nutrition tracking', text: 'Use Nexal’s free Android meal tracker for the portion you actually ate.' },
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Explore manual nutrition tracking', text: 'Use Nexal’s free Android meal tracker for the portion you actually ate.' },
     sources: [{ href: 'https://www.foodstandards.gov.au/business/labelling/nutrition-panel-calculator/weight-change-factors', label: 'FSANZ: cooking and weight change factors' }],
     faqs: [
       { question: 'Should I always weigh food raw?', answer: 'No. Either state can work when the nutrition entry matches it. Raw and cooked quantities should not be exchanged without a suitable calculation.' },
@@ -65,7 +65,7 @@ export const nutritionGuides: Guide[] = [
         'Nexal offers free manual calorie and macro logging and copying of recent meals on Android. Calculate using the package basis, then record the portion through the supported workflow. When reusing it, check the unit along with the number. A correct quantity attached to the wrong serving definition remains an incorrect record.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'See Nexal’s calorie and macro tracker', text: 'Build clear meal records with free manual tracking.' },
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'See Nexal’s calorie and macro tracker', text: 'Build clear meal records with free manual tracking.' },
     sources: [{ href: 'https://www.foodstandards.gov.au/consumer/labelling/panels', label: 'FSANZ: nutrition information panels' }],
     faqs: [
       { question: 'Are grams always better than servings?', answer: 'No. A verified serving or item count can be convenient. Grams help when your portion differs from the defined serving or item sizes vary.' },
@@ -99,7 +99,7 @@ export const nutritionGuides: Guide[] = [
         'Use a calculator outside Nexal when conversion is needed, then enter the result through its free manual meal tracking on Android. This guide does not assume a built-in unit conversion setting. Keep the original unit available while checking your work, and review copied meals if the package or label source changes later.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Explore food energy and macro logging', text: 'Record your calculated portion with Nexal’s free core meal tools.' },
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Explore food energy and macro logging', text: 'Record your calculated portion with Nexal’s free core meal tools.' },
     sources: [{ href: 'https://www.foodstandards.gov.au/business/labelling/nutrition-panel-calculator/nutrients-in-the-NPC', label: 'FSANZ: energy units and nutrition calculations' }],
     faqs: [
       { question: 'How do I approximately convert kJ to kcal?', answer: 'Divide the kilojoule value by 4.2 for an everyday approximation, then scale it to the amount eaten if needed.' },
@@ -133,7 +133,7 @@ export const nutritionGuides: Guide[] = [
         'Nexal’s free manual meal, calorie and macro logging on Android can hold your calculated entry. Premium AI estimates are optional and cannot establish an unseen recipe. Review one-off meals within the wider diary, rather than changing future portions to compensate for a number whose accuracy you cannot verify. Better records begin with honest assumptions.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Log meals manually in Nexal', text: 'Keep dining-out estimates alongside your everyday food records.' },
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Log meals manually in Nexal', text: 'Keep dining-out estimates alongside your everyday food records.' },
     sources: [{ href: 'https://www.fda.gov/regulatory-information/search-fda-guidance-documents/guidance-industry-labeling-guide-restaurants-and-retail-establishments-selling-away-home-foods-part-0', label: 'FDA: restaurant menu nutrition guidance, United States' }],
     faqs: [
       { question: 'What if the restaurant only publishes calories?', answer: 'Use that figure for the matching item and portion. Any macro breakdown from another source remains a separate estimate, not official restaurant information.' },
@@ -167,8 +167,8 @@ export const nutritionGuides: Guide[] = [
         'At the end of a few workdays, look for information gaps rather than judging the menu. Perhaps you consistently forget the drink or cannot remember the afternoon snack. Put the relevant detail within reach at packing time. The best lunch diary routine fits the real break you have, including interruptions and changing plans, without requiring perfect recall.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Explore everyday meal logging', text: 'Try free manual tracking and recent-meal copying in Nexal for Android.' },
-    sources: [{ href: '/calorie-macro-tracker', label: 'Nexal: free core meal and macro tracking' }],
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Explore everyday meal logging', text: 'Try free manual tracking and recent-meal copying in Nexal for Android.' },
+    sources: [{ href: '/free-calorie-and-macro-tracker', label: 'Nexal: free core meal and macro tracking' }],
     faqs: [
       { question: 'Should I log lunch when I pack it?', answer: 'You can prepare the calculation then, but confirm the diary reflects the amount actually eaten after plans and portions change.' },
       { question: 'Can I copy yesterday’s lunch?', answer: 'Yes, Nexal supports copying recent meals. Review the portion and components before treating the copied entry as today’s record.' },
@@ -201,8 +201,8 @@ export const nutritionGuides: Guide[] = [
         'Nexal’s free manual meal and macro logging on Android can support this routine, and copying recent meals can shorten repeated breakfasts. After a week, identify one point of friction: perhaps toppings change often, or takeaway cup sizes are unclear. Improve that part of the routine before adding more tracking detail to every morning.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Try a straightforward breakfast log', text: 'Record meals free in Nexal and review quantities when copying a recent breakfast.' },
-    sources: [{ href: '/calorie-macro-tracker', label: 'Nexal: manual meal, calorie and macro tracking' }],
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Try a straightforward breakfast log', text: 'Record meals free in Nexal and review quantities when copying a recent breakfast.' },
+    sources: [{ href: '/free-calorie-and-macro-tracker', label: 'Nexal: manual meal, calorie and macro tracking' }],
     faqs: [
       { question: 'Do I need to eat breakfast to use a food diary?', answer: 'No. Record your actual eating routine. This article explains logging, not when you should eat.' },
       { question: 'Can I reuse a standard breakfast entry?', answer: 'Yes, if you check today’s products, quantities, toppings and drink. Repetition is convenient when the entry still matches the meal.' },
@@ -303,8 +303,8 @@ export const nutritionGuides: Guide[] = [
         'Nexal provides free manual meal and macro logging on Android. Calculate your portion externally if needed and enter its nutrition through the supported tools. When copying a familiar family dinner, update your plate rather than assuming last week’s portion. This approach keeps the diary personal and useful without turning a shared meal into a household tracking project.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Record your own dinner portion', text: 'Use Nexal’s free manual logging for shared meals and individual servings.' },
-    sources: [{ href: '/calorie-macro-tracker', label: 'Nexal: meal and macro logging on Android' }],
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Record your own dinner portion', text: 'Use Nexal’s free manual logging for shared meals and individual servings.' },
+    sources: [{ href: '/free-calorie-and-macro-tracker', label: 'Nexal: meal and macro logging on Android' }],
     faqs: [
       { question: 'Can I divide a family meal by the number of diners?', answer: 'Only when that reasonably reflects the portions eaten. Unequal servings and different component choices need a more specific estimate.' },
       { question: 'How do I handle second helpings?', answer: 'Include the additional quantity in your personal record. Calculate it separately or update the total consumed portion, avoiding duplicate entries.' },
@@ -338,7 +338,7 @@ export const nutritionGuides: Guide[] = [
         'Before relying on any scanned entry, ask four questions: is this the right product, is the nutrition basis clear, does it match the label, and is the quantity what I ate? No specific database coverage or accuracy rate is promised here. A fast entry is useful when these basic checks survive the shortcut.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Compare Nexal’s nutrition logging options', text: 'Start with free manual tracking; barcode scanning is an optional Premium tool.' },
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Compare Nexal’s nutrition logging options', text: 'Start with free manual tracking; barcode scanning is an optional Premium tool.' },
     sources: [{ href: 'https://www.gs1.org/standards/barcodes', label: 'GS1: barcodes and product identifiers' }, { href: 'https://www.foodauthority.nsw.gov.au/consumer/food-allergies/living-food-allergy/reading-food-labels', label: 'NSW Food Authority: checking current food labels' }],
     faqs: [
       { question: 'Does a barcode contain my portion’s macros?', answer: 'A common retail barcode identifies the product for lookup. You still need to check the returned information and specify your portion.' },
@@ -372,8 +372,8 @@ export const nutritionGuides: Guide[] = [
         'Nexal Premium includes AI macro estimates; free manual meal and macro logging is available on Android. Photo analysis is not a verified Nexal feature in this guide. You can apply this review process to output from another tool, then manually record a supported calculation. Pay for assistance only if reviewing it still leaves you with a useful workflow.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Explore Nexal’s meal logging workflow', text: 'Keep reviewed estimates in a free manual food diary; Premium macro estimates are optional.' },
-    sources: [{ href: '/calorie-macro-tracker', label: 'Nexal: tracking and the limits of nutrition estimates' }],
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Explore Nexal’s meal logging workflow', text: 'Keep reviewed estimates in a free manual food diary; Premium macro estimates are optional.' },
+    sources: [{ href: '/free-calorie-and-macro-tracker', label: 'Nexal: tracking and the limits of nutrition estimates' }],
     faqs: [
       { question: 'Does this article mean Nexal has a food photo scanner?', answer: 'No. Photo scanning is not established here. Nexal’s verified offer includes Premium AI macro estimates and free manual logging.' },
       { question: 'Can a photo estimate replace known ingredient quantities?', answer: 'Use known recipe, package and measured quantity information to review the estimate. A photo-based guess should not override better information you have.' },
@@ -440,8 +440,8 @@ export const nutritionGuides: Guide[] = [
         'Nexal offers free manual meal and macro logging on Android. You can calculate an addition externally and incorporate it into your meal record. If you copy a recent meal, check today’s dressing and toppings rather than inheriting yesterday’s choices. A small variation can be recorded directly without replacing the entire familiar meal or treating every addition as a new recipe.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Build a more complete meal record', text: 'Use free manual logging for meals and the additions you actually consume.' },
-    sources: [{ href: '/calorie-macro-tracker', label: 'Nexal: manual nutrition logging and estimates' }],
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Build a more complete meal record', text: 'Use free manual logging for meals and the additions you actually consume.' },
+    sources: [{ href: '/free-calorie-and-macro-tracker', label: 'Nexal: manual nutrition logging and estimates' }],
     faqs: [
       { question: 'Should I always add cooking oil separately?', answer: 'Check whether it is already represented in the recipe or prepared-food entry. Count the consumed food once using a clear method.' },
       { question: 'What if I do not know how much sauce I ate?', answer: 'Use the best reasonable portion estimate and keep its uncertainty in mind. Do not present a guessed amount as a measured one.' },
@@ -474,8 +474,8 @@ export const nutritionGuides: Guide[] = [
         'Nexal supports free manual meal logging and copying recent meals on Android. After copying, check the meal quantities and whether you already recorded the food. Repeated names are not always errors: two separate coffees may be correct. Resolve entries by what you consumed and when, preserving real repeats while correcting accidental overlap through the available logging tools.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Keep your daily meal record clear', text: 'Use Nexal’s free manual tracking with a brief source and duplication check.' },
-    sources: [{ href: '/calorie-macro-tracker', label: 'Nexal: calorie and macro tracking' }],
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Keep your daily meal record clear', text: 'Use Nexal’s free manual tracking with a brief source and duplication check.' },
+    sources: [{ href: '/free-calorie-and-macro-tracker', label: 'Nexal: calorie and macro tracking' }],
     faqs: [
       { question: 'Why do two entries for the same food show different calories?', answer: 'They may use different products, preparation states, energy units or serving sizes. Compare those details before concluding the nutrition data conflicts.' },
       { question: 'Should I remove every repeated food name from a diary?', answer: 'No. Repeated consumption can be correct. Remove overlap only when multiple entries describe the same food you ate once.' },
@@ -508,8 +508,8 @@ export const nutritionGuides: Guide[] = [
         'Nexal offers free meal, calorie and macro logging on Android. Review the available records manually; this guide does not promise an automatic weekly audit or a special analytics report. If tracking feels burdensome, simplify the detail or reconsider whether it serves you. A useful weekly review should reduce confusion, not require a second demanding tracking system.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Build a food diary you can review', text: 'Start with Nexal’s free core meal tracking and inspect one week at a time.' },
-    sources: [{ href: '/calorie-macro-tracker', label: 'Nexal: meal tracking and nutrition estimates' }],
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Build a food diary you can review', text: 'Start with Nexal’s free core meal tracking and inspect one week at a time.' },
+    sources: [{ href: '/free-calorie-and-macro-tracker', label: 'Nexal: meal tracking and nutrition estimates' }],
     faqs: [
       { question: 'Should I average all seven days if some are incomplete?', answer: 'An average of incomplete days can be misleading. Review the coverage and state which days the calculation actually represents.' },
       { question: 'What should I change after a weekly review?', answer: 'Start with one practical issue in recording or planning. Do not infer a personal dietary prescription from uncertain diary totals.' },
@@ -542,8 +542,8 @@ export const nutritionGuides: Guide[] = [
         'Nexal’s free manual meal and macro logging on Android includes protein alongside calories, carbohydrates and fat. Premium AI estimates can assist with estimates, but they do not determine a personal protein requirement. If the recording process causes stress or dominates meal decisions, simplify it or stop. Understanding a label should support your choices rather than impose an arbitrary daily score.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Explore free protein and macro logging', text: 'Use Nexal to record the meals you eat without treating this guide as a target prescription.' },
-    sources: [{ href: '/calorie-macro-tracker', label: 'Nexal: protein, carbohydrate and fat tracking' }],
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Explore free protein and macro logging', text: 'Use Nexal to record the meals you eat without treating this guide as a target prescription.' },
+    sources: [{ href: '/free-calorie-and-macro-tracker', label: 'Nexal: protein, carbohydrate and fat tracking' }],
     faqs: [
       { question: 'Does this guide recommend a daily protein target?', answer: 'No. It explains recording and portion calculations. Get qualified individual advice when you need a personal dietary target.' },
       { question: 'Is food weight the same as protein weight?', answer: 'No. Use the food’s stated protein value and scale it to the portion. The full weight of a food is not its protein content.' },
@@ -610,8 +610,8 @@ export const nutritionGuides: Guide[] = [
         'Set a practical stopping point: confirm products, amounts, additions and consumption, then save the entry. You do not need to re-investigate an unchanged packaged food every time for ordinary logging, but review it when the package or recipe changes. The shortcut works best when a small check is built into it rather than postponed to a weekly correction session.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Try free recent-meal copying in Nexal', text: 'Save routine logging effort while checking that copied meals match today.' },
-    sources: [{ href: '/calorie-macro-tracker', label: 'Nexal: free core meal tracking' }],
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Try free recent-meal copying in Nexal', text: 'Save routine logging effort while checking that copied meals match today.' },
+    sources: [{ href: '/free-calorie-and-macro-tracker', label: 'Nexal: free core meal tracking' }],
     faqs: [
       { question: 'Is copying a recent meal free in Nexal?', answer: 'Yes. Copying recent meals is available with core meal tracking; it does not require AI meal planning.' },
       { question: 'What should I check after copying?', answer: 'Review products, quantities, additions and actual consumption, then make sure the same meal has not already been entered elsewhere in the day.' },

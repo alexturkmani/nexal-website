@@ -49,6 +49,20 @@ for (const url of urls) {
   }
   console.log(`PASS ${path}: status, indexability, canonical, unique metadata, headings, schema, social, images`);
 }
+// Consolidated URLs must 308 to their replacement, and no page may still link to them.
+const consolidated = {
+  '/calorie-macro-tracker': '/free-calorie-and-macro-tracker',
+  '/guides/myfitnesspal-alternative-android': '/compare/myfitnesspal-alternative',
+  '/guides/choose-workout-and-meal-planner-app': '/guides/best-ai-workout-and-meal-planner-apps-android',
+};
+for (const [from, to] of Object.entries(consolidated)) {
+  const response = await fetch(`${base}${from}`, { redirect: 'manual' });
+  assert.equal(response.status, 308, `${from}: permanent redirect`);
+  assert.equal(new URL(response.headers.get('location'), base).pathname, to, `${from}: redirects to ${to}`);
+  assert.ok(!urls.some(url => new URL(url).pathname === from), `${from}: not in sitemap`);
+  for (const [path, html] of documents) assert.ok(!html.includes(`href="${from}"`), `${path}: still links to retired ${from}`);
+}
+console.log(`PASS consolidated URLs: ${Object.keys(consolidated).length} permanent redirects, no remaining links`);
 const seenLinks = new Set();
 const guideReferrers = new Map();
 for (const [path, html] of documents) {

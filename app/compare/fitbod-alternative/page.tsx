@@ -4,7 +4,7 @@ import { seoPageMetadata } from '../../site-config';
 
 const page = {
   path: '/compare/fitbod-alternative',
-  title: 'Fitbod Alternative with Meal Planning: Nexal',
+  title: 'Fitbod Alternative with Meal Planning',
   description: 'Compare Nexal and Fitbod on Android: AI workout plans, meal and macro planning, free logging and watch support, with each app’s strengths stated plainly.',
 };
 
@@ -51,9 +51,9 @@ export default function Page() {
       ],
       rows: [
         { feature: 'Free use', nexal: 'Workout and food logging free with no time limit', other: 'Limited free trial, then a subscription' },
-        { feature: 'AI workout programming', nexal: 'Premium: 4 to 6 week plans from your goal, experience and 3 to 7 training days', other: 'Core feature: each workout is generated from your logs and muscle recovery' },
+        { feature: 'AI workout programming', nexal: 'Premium: 6 or 8 week plans from your goal, experience and 3 to 7 training days', other: 'Core feature: each workout is generated from your logs and muscle recovery' },
         { feature: 'Adjusts after every session', nexal: 'No; the plan is generated up front and can be regenerated', other: 'Yes' },
-        { feature: 'Meal planning', nexal: 'Premium: AI meal plans from calorie and macro targets, preferences and allergies', other: 'Not offered in the app' },
+        { feature: 'Meal planning', nexal: 'Premium: AI meal plans from calorie and macro targets that avoid listed allergies', other: 'Not offered in the app' },
         { feature: 'Calorie and macro logging', nexal: 'Free', other: 'Not offered in the app' },
         { feature: 'Workout logging and history', nexal: 'Free: sets, reps, weight, rest timer and weekly volume', other: 'Detailed logging and progress views with a subscription' },
         { feature: 'Platforms and watches', nexal: 'Android phone only; no watch app', other: 'iPhone and Android, with Apple Watch and Wear OS apps' },
@@ -64,12 +64,12 @@ export default function Page() {
       intro: 'Fitbod is a strong choice for people who want the app to decide each strength session. Nexal is for people who want training and food planned together.',
       points: [
         { title: 'Stay with Fitbod if', text: 'you want workouts recalculated after every session, train mostly for strength and hypertrophy, or log from a smartwatch.' },
-        { title: 'Try Nexal if', text: 'you want meal plans and macro tracking next to your training, prefer free logging, and plan in four to six week blocks.' },
+        { title: 'Try Nexal if', text: 'you want meal plans and macro tracking next to your training, prefer free logging, and plan in six or eight week blocks.' },
         { title: 'Or use both', text: 'Some people keep Fitbod for sessions and use free Nexal logging for food. Choose what you will maintain, not the most features.' },
       ],
     }}
     sections={[
-      { title: 'Adaptive sessions vs a planned block', text: 'Fitbod chooses each workout from your recent training. Nexal Premium plans a four to six week block up front. Some people prefer the variety; others prefer knowing next week in advance.' },
+      { title: 'Adaptive sessions vs a planned block', text: 'Fitbod chooses each workout from your recent training. Nexal Premium plans a six or eight week block up front. Some people prefer the variety; others prefer knowing next week in advance.' },
       { title: 'Why nutrition changes the comparison', text: 'Training sets the stimulus; food and recovery shape what you get from it. If you already track food elsewhere, a workout-only app may be all you need. If not, one app can be simpler.' },
       { title: 'Watch users should weigh this', text: 'Fitbod supports Apple Watch and Wear OS. Nexal has no watch app and does not sync with Health Connect, so you log from your phone.' },
       { title: 'Count the cost of two apps', text: 'A workout subscription plus a separate nutrition subscription can cost more than one app covering both. Compare current Google Play prices in your region before deciding.' },
@@ -77,7 +77,7 @@ export default function Page() {
     faqs={[
       { q: 'Does Fitbod include meal planning or calorie tracking?', a: 'Fitbod focuses on workouts and does not offer meal planning or food logging in the app. Nexal includes free calorie and macro logging and AI meal plans with Premium.' },
       { q: 'Is Nexal free to use?', a: 'Yes. Workout logging and calorie and macro logging are free with no time limit. Premium adds AI workout plans, AI meal plans, AI macro estimates and barcode scanning.' },
-      { q: 'Does Nexal adapt every workout like Fitbod?', a: 'No. Nexal Premium generates a four to six week plan up front, which you can regenerate when your goals or schedule change. Fitbod adjusts each session.' },
+      { q: 'Does Nexal adapt every workout like Fitbod?', a: 'No. Nexal Premium generates a six or eight week plan up front, which you can regenerate when your goals or schedule change. Fitbod adjusts each session.' },
       { q: 'Does Nexal work on Wear OS or Apple Watch?', a: 'Not currently. Nexal is an Android phone app. Fitbod offers Apple Watch and Wear OS apps.' },
       { q: 'Can I use Nexal for nutrition and keep Fitbod for training?', a: 'Yes. Nexal food logging is free, so you can use it alongside a workout app. You can also log workouts in Nexal later if you want everything in one place.' },
     ]}

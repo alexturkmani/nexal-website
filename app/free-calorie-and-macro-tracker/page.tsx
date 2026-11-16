@@ -56,6 +56,7 @@ export default function Page() {
       { q: 'Does the free version track protein, carbs and fat?', a: 'Yes. Every entry records calories, protein, carbohydrates and fat, and each day shows your totals against targets calculated from your profile.' },
       { q: 'Is there a barcode scanner in the free version?', a: 'No. The barcode scanner is a Premium feature. On the free plan you enter values manually and can re-log recent foods quickly.' },
       { q: 'Does Nexal show ads?', a: 'No. Nexal does not show ads on the free plan or on Premium.' },
+      { q: 'Is calorie tracking exact?', a: 'No. Nutrition values are estimates that vary by food, brand and serving size. Use daily totals to spot trends over weeks rather than chasing an exact figure for one meal.' },
       { q: 'Can I set my own macro targets?', a: 'Nexal calculates calorie and macro targets from your goal, weight and activity level. Update those details to change the targets. Typing custom gram targets is not currently supported.' },
     ]}
   />;

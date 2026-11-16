@@ -5,7 +5,7 @@ import { siteUrl } from './site-config';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: 'AI Workout & Meal Planner App for Android | Nexal', template: '%s | Nexal' },
+  title: { default: 'Nexal: AI Fitness App for Workouts, Meals & Macros', template: '%s | Nexal' },
   description: 'Create personalised AI workout and meal plans, track calories and macros, and follow your progress in one Android fitness app. Download Nexal today.',
   applicationName: 'Nexal',
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 } },

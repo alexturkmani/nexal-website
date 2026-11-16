@@ -8,11 +8,11 @@ import { guides, guideDates, libraryUpdatedDate } from './guides/content';
  * search engines keep trusting <lastmod>.
  */
 const pageUpdated = {
-  home: '2026-11-07',
-  landing: '2026-10-11',
-  freeTrackers: '2026-11-14',
-  /** Comparison tables were checked against competitor pages on this date; re-check before bumping. */
-  comparisons: '2026-11-14',
+  home: '2026-11-16',
+  landing: '2026-11-15',
+  freeTrackers: '2026-11-16',
+  /** Last copy change. Competitor facts in the tables were last checked on the date shown on each page. */
+  comparisons: '2026-11-16',
   about: '2026-10-11',
   privacy: '2026-09-01',
 };
@@ -25,7 +25,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/workout-meal-planner-app`, lastModified: pageUpdated.landing, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${siteUrl}/ai-workout-planner`, lastModified: pageUpdated.landing, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${siteUrl}/ai-meal-planner`, lastModified: pageUpdated.landing, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${siteUrl}/calorie-macro-tracker`, lastModified: pageUpdated.landing, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${siteUrl}/free-calorie-and-macro-tracker`, lastModified: pageUpdated.freeTrackers, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${siteUrl}/free-workout-tracker-app`, lastModified: pageUpdated.freeTrackers, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${siteUrl}/compare/myfitnesspal-alternative`, lastModified: pageUpdated.comparisons, changeFrequency: 'monthly', priority: 0.8 },

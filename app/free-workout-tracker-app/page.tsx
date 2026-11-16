@@ -49,14 +49,14 @@ export default function Page() {
       { title: 'Keep the spreadsheet if it works', text: 'If you enjoy building your own sheets, there is no need to switch. An app is most useful when typing into cells mid-workout is the reason you stop logging.' },
       { title: 'What the volume chart shows', text: 'Weekly volume is the sum of weight × reps. It is a useful trend for similar training, but it does not measure technique, effort or recovery, and it changes when you swap exercises.' },
       { title: 'Streaks without the guilt', text: 'A streak should reward consistency, not punish rest. Logging food or water counts as activity, so a planned recovery day keeps the streak going.' },
-      { title: 'When to add AI planning', text: 'Nexal Premium can generate a four to six week gym or home plan around your goal, experience and available days. Logging stays free whether or not you use it.' },
+      { title: 'When to add AI planning', text: 'Nexal Premium can generate a six or eight week gym or home plan around your goal, experience and available days. Logging stays free whether or not you use it.' },
     ]}
     faqs={[
       { q: 'Is the Nexal workout tracker free?', a: 'Yes. Creating custom workouts, logging sets, reps and weight, using the rest timer and viewing your history and weekly volume are free with no time limit.' },
       { q: 'Can I create my own workouts and exercises?', a: 'Yes. Name a workout, add your own exercises and log each set with reps and weight. You do not need an AI plan to use the tracker.' },
       { q: 'How does the Nexal streak work?', a: 'The streak grows on each consecutive day you log activity, including a workout, cardio, a meal, water or a completed fast. Missing a day restarts it.' },
       { q: 'Does Nexal sync with a smartwatch or Health Connect?', a: 'Not currently. Workouts are logged in the Nexal app on your Android phone.' },
-      { q: 'What does Premium add for training?', a: 'Premium adds AI workout plans of four to six weeks with exercises, sets, reps and rest times, plus AI meal planning. Workout logging remains free.' },
+      { q: 'What does Premium add for training?', a: 'Premium adds AI workout plans of six or eight weeks with exercises, sets, reps and rest times, plus AI meal planning. Workout logging remains free.' },
     ]}
   />;
 }

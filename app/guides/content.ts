@@ -42,6 +42,7 @@ export function guideTopic(guide: Pick<Guide, 'category'>) {
 const originalGuides: Guide[] = [
   {
     slug: 'beginner-3-day-workout-plan',
+    updatedAt: '2026-11-15',
     title: 'A beginner three-day workout week you can actually organise',
     metaTitle: 'Beginner 3-Day Workout Plan: Gym Week & Tracking',
     description: 'Organise a beginner three-day gym week, keep a simple workout log and understand how AI planning differs from free workout tracking in Nexal.',
@@ -72,7 +73,7 @@ const originalGuides: Guide[] = [
       ] },
       { id: 'ai-plan', title: 'When an AI workout planner can help', paragraphs: [
         'An AI planner is useful when you want help organising exercises around your goal, experience, training days and home or gym setting. Be specific about what you can realistically do. A polished plan is still only helpful if you can follow it.',
-        'Nexal Premium generates personalised four-to-six-week workout plans, including exercise sets, repetitions and rest times. AI generation is a paid feature; the free tracker and this educational example are not a free AI workout generator.',
+        'Nexal Premium generates personalised six or eight week workout plans, including exercise sets, repetitions and rest times. AI generation is a paid feature; the free tracker and this educational example are not a free AI workout generator.',
         'Review any generated plan before using it. AI can make mistakes and is not a substitute for a qualified coach, injury assessment or medical advice. Revisit the plan if your circumstances change.',
       ] },
       { id: 'review', title: 'Review consistency before judging results', paragraphs: [
@@ -89,6 +90,7 @@ const originalGuides: Guide[] = [
   },
   {
     slug: 'how-to-track-calories-and-macros',
+    updatedAt: '2026-11-15',
     title: 'How to track calories and macros without making logging complicated',
     metaTitle: 'How to Track Calories & Macros: A Worked Example',
     description: 'Learn calorie and macro logging with a worked serving-size example, common mistakes and a simple daily routine. Start tracking free in Nexal on Android.',
@@ -119,11 +121,11 @@ const originalGuides: Guide[] = [
       ] },
       { id: 'free-premium', title: 'Free macro tracking versus Premium meal planning', paragraphs: [
         'Tracking records what you ate. Planning helps organise what you might eat next. They are connected but they are not the same feature, and an app should make that distinction clear before you subscribe.',
-        'Nexal’s free tools cover core manual tracking. Premium adds AI meal plans around your targets and preferences, meal substitutions, AI macro estimates and barcode scanning. Review generated meal ideas and independently check ingredients if you have allergies.',
+        'Nexal’s free tools cover core manual tracking. Premium adds AI meal plans around your targets and listed allergies, meal substitutions, AI macro estimates and barcode scanning. Review generated meal ideas and independently check ingredients if you have allergies.',
         'Start by logging a familiar meal. You can decide later whether planning and scanning save enough time to justify a subscription.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Explore the free calorie and macro tracker', text: 'Keep calories and macros beside your workouts. Premium AI meal planning is optional.' },
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Explore the free calorie and macro tracker', text: 'Keep calories and macros beside your workouts. Premium AI meal planning is optional.' },
     sources: [
       { href: 'https://www.nhs.uk/live-well/eat-well/food-guidelines-and-food-labels/how-to-read-food-labels/', label: 'NHS: how to read food labels' },
       { href: 'https://www.nhs.uk/live-well/eat-well/food-types/different-fats-nutrition/', label: 'NHS: energy from fat, protein and carbohydrate' },
@@ -133,111 +135,14 @@ const originalGuides: Guide[] = [
       { question: 'Should label calories exactly match the macro calculation?', answer: 'Not always. Rounding and components such as fibre can cause differences. Check the label, serving size and units before assuming an entry is wrong.' },
     ],
   },
-  {
-    slug: 'choose-workout-and-meal-planner-app',
-    title: 'How to choose a workout and meal planner app for Android',
-    metaTitle: 'Choose a Workout & Meal Planner App for Android',
-    description: 'Compare free tracking, AI plans, food logging and subscription terms before choosing an Android workout and meal planner. Use this practical checklist.',
-    category: 'APP BUYING GUIDE', readTime: '4 min read',
-    intro: 'A feature list is only the beginning. The right fitness app needs to fit your actual routine, make everyday logging manageable and explain what you will pay for before you commit.',
-    takeaway: 'Test your real workflow before subscribing: one workout, one meal and a review of your progress. Compare the features you will actually use.',
-    sections: [
-      { id: 'job', title: 'Decide whether you need tracking, planning or both', paragraphs: [
-        'If you already have a coach or a routine you like, you may mainly need a place to record sessions and meals. Paying for AI plan generation is not automatically useful in that situation.',
-        'If you struggle to organise your week, planning tools may matter more. Check what inputs they accept and what the output contains: exercise names alone are different from sessions with sets, repetitions and rest times.',
-        'For nutrition, ask whether you want a diary, meal ideas or both. A calorie counter does not necessarily generate meal plans, and a meal-planning app does not necessarily make daily logging easy.',
-      ] },
-      { id: 'checklist', title: 'A practical checklist before your first subscription', paragraphs: [
-        'Use the same checklist for each app rather than comparing screenshots alone. The table describes questions to test, not a ranking of competitors.',
-      ], example: { title: 'Check the workflow, not just the marketing', headers: ['Area', 'Question to answer'], rows: [
-        ['Free access', 'Can I log workouts and meals without starting a subscription?'],
-        ['Workout plans', 'Does the planner support my experience, schedule and home or gym setting?'],
-        ['Food logging', 'Can I change portions and reuse a meal without starting over?'],
-        ['Progress', 'Can I find previous entries and understand what a chart represents?'],
-        ['Billing', 'Are the local price, renewal period and trial terms clear?'],
-        ['Support', 'Can I restore a purchase and find help if access does not update?'],
-      ], caption: 'Open each app and test the tasks that matter to you. Feature availability and prices can change.' } },
-      { id: 'nexal-fit', title: 'Where Nexal fits, and what requires Premium', paragraphs: [
-        'Nexal is an Android app that brings workout and nutrition tracking together. Core meal, calorie, macro, workout and progress tracking are available without a subscription. Custom workouts and recent-meal copying support a repeatable daily routine.',
-        'Premium adds AI workout plans, AI meal plans, substitutions, AI macro estimates and barcode scanning. Workout generation supports gym or home settings and different experience levels; meal planning uses your targets and preferences.',
-        'That combination may suit someone who wants planning and logging in one place. It may not suit someone looking for an iPhone app or expecting AI guidance to replace individual professional advice. Nexal is currently available through Google Play for Android.',
-      ] },
-      { id: 'trial', title: 'Read the trial and renewal terms before subscribing', paragraphs: [
-        'Check the actual price shown by Google Play for your country and chosen plan. An annual equivalent monthly price is not a monthly payment: the annual amount is charged according to the terms shown at checkout.',
-        'Nexal advertises a fourteen-day free trial for eligible new subscribers. Eligibility and the applicable offer are determined through Google Play. Read the renewal amount and cancellation terms before confirming; do not assume every account or offer includes a trial.',
-        'During a trial, test the features you subscribed for. Generate and review a plan, use it in your routine and decide whether it saves you time. Manage or cancel a Google Play subscription through Google Play. Uninstalling an app is not a cancellation workflow.',
-      ] },
-      { id: 'first-session', title: 'A useful first-session test', paragraphs: [
-        'Choose a familiar meal and log it with the correct portion. Record a workout you understand, then find the entry again in your history. This tests whether the app helps with real daily tasks before you judge the design or advanced features.',
-        'If you choose Premium, check that the plan reflects the settings you supplied. Look for clear instructions and review anything that seems unsuitable. Also reopen the app to confirm that your subscription access remains available.',
-        'This guide is published by Nexal, so it is not an independent product review. It is intended to help you assess fit, understand feature boundaries and make an informed decision without claims that one app is best for everyone.',
-      ] },
-    ],
-    feature: { href: '/workout-meal-planner-app', label: 'See Nexal’s workout and meal planning features', text: 'Try core tracking for free before deciding whether Premium tools fit your routine.' },
-    sources: [{ href: 'https://support.google.com/googleplay/answer/7018481', label: 'Google Play: manage and cancel subscriptions' }],
-    faqs: [
-      { question: 'Is an annual fitness subscription always better value?', answer: 'Only if you use the app enough to justify the commitment. Compare the total charge and renewal terms, not just an equivalent monthly figure.' },
-      { question: 'Is this an independent comparison of fitness apps?', answer: 'No. This guide is published by Nexal and explains a practical selection checklist alongside Nexal’s own feature boundaries.' },
-    ],
-  },
 ];
 
 const acquisitionGuides: Guide[] = [
   {
-    slug: 'myfitnesspal-alternative-android',
-    title: 'Looking for a MyFitnessPal alternative on Android? Start with your routine',
-    metaTitle: 'MyFitnessPal Alternative for Android: Nexal Guide',
-    description: 'Considering a MyFitnessPal alternative? Compare free tracking, workout planning and Premium tools, then try Nexal on Android without subscribing.',
-    category: 'APP COMPARISON', readTime: '5 min read',
-    intro: 'Changing fitness apps only helps if the new one solves a problem you actually have. If you want workouts and food logging together, use this checklist to decide whether Nexal fits your routine.',
-    takeaway: 'Nexal is an option for free core tracking with optional Premium AI workout and meal plans. It is not a claim that everyone should switch or that every competitor feature has an equivalent.',
-    sections: [
-      { id: 'reason-to-switch', title: 'What are you looking to change?', paragraphs: [
-        'Write down your reason before you download another app. You might want training and nutrition in one place, less manual planning, or a free way to record daily meals and workouts. Those are different needs and lead to different comparisons.',
-        'If your current app already works well, switching may add effort without adding value. Familiar saved foods, previous entries and an established routine are worth considering alongside new features.',
-        'For someone starting from scratch, the useful question is simpler: can you log a normal day and find the information again without getting lost? Start there instead of comparing the number of features on a marketing page.',
-      ] },
-      { id: 'feature-comparison', title: 'MyFitnessPal and Nexal: compare the feature boundaries', paragraphs: [
-        'MyFitnessPal offers Free, Premium and Premium+ plans. Its official documentation places faster logging tools such as barcode scanning in Premium, and meal planning in Premium+. That makes the plan tier important when comparing features, not just the app name.',
-        'Nexal provides free core calorie, macro, meal, workout and progress tracking. Its Premium tier adds AI workout and meal plans, substitutions, AI food estimates and barcode scanning. Nexal’s scanner is not free, so it should not be presented as a free-scanner replacement.',
-      ], example: { title: 'Selected features, not an exhaustive product ranking', headers: ['Feature', 'MyFitnessPal', 'Nexal'], rows: [
-        ['Core food diary', 'Free tier; paid tiers add tools', 'Free core meal, calorie and macro tracking'],
-        ['Barcode scanning', 'Premium according to official documentation', 'Premium'],
-        ['Meal planning', 'Premium+ according to official documentation', 'Premium AI meal planning'],
-        ['AI workout plans', 'Check the current product for your specific training needs', 'Premium plans for home or gym'],
-        ['Platform fit', 'Check current availability for your devices', 'Android through Google Play'],
-      ], caption: 'Checked 6 October 2026. Selected MyFitnessPal details come from its official tier guide; offers and regional availability may change. This is a Nexal-published comparison.' } },
-      { id: 'trial-workflow', title: 'Test Nexal with one meal and one workout', paragraphs: [
-        'Download Nexal from Google Play, create your account and complete the setup. You can start core tracking without taking out a subscription. Pick a familiar meal, enter the portion and check the calorie and macro totals.',
-        'Then create or record a workout you already understand. Find it in the history and check whether the logging process fits how you train. This practical trial tells you more than choosing an app by its icon or a promotional chart.',
-        'If your main reason for switching is help with planning, review the Premium features separately. Eligible new subscribers may have a fourteen-day trial; the actual offer and renewal terms appear in Google Play. Do not assume a trial applies to every account.',
-      ] },
-      { id: 'migration', title: 'Check what you would leave behind before switching', paragraphs: [
-        'Do not assume your old food diary, exercise history or saved recipes will automatically transfer. This guide does not promise a MyFitnessPal import or account connection in Nexal. Keep any information you need using the options offered by your existing service.',
-        'Trying a new app also does not cancel an existing subscription. Review subscriptions with the provider or store where you bought them. Avoid paying for overlapping tools simply because you stopped opening the older app.',
-        'If integrations or a particular food database matter to you, test those requirements directly. We are not claiming Nexal has a larger database, better accuracy or the same integrations as MyFitnessPal.',
-      ] },
-      { id: 'decision', title: 'Choose the tool you will use, not a universal winner', paragraphs: [
-        'Nexal may fit an Android user who wants daily training and nutrition tracking together and optional AI planning. MyFitnessPal may remain the right choice if its workflow and specific tools already suit you.',
-        'Compare the local checkout price, the features included in that plan and the practical benefit to your week. No comparison can tell you whether a subscription is worthwhile without knowing what you use.',
-        'This article is written by Nexal, not an independent reviewer. MyFitnessPal is a separate product and is not affiliated with Nexal. Start with the free workflow and make the upgrade decision on your own experience.',
-      ] },
-    ],
-    feature: { href: '/workout-meal-planner-app', label: 'Explore Nexal’s combined workout and meal tracker', text: 'Try Nexal’s free tracking before deciding whether to switch.' },
-    sources: [
-      { href: 'https://support.myfitnesspal.com/hc/en-us/articles/34889191368077-The-difference-between-Free-Premium-and-Premium', label: 'MyFitnessPal: official Free, Premium and Premium+ comparison' },
-      { href: 'https://support.google.com/googleplay/answer/7018481', label: 'Google Play: manage existing subscriptions' },
-    ],
-    faqs: [
-      { question: 'Is Nexal a free MyFitnessPal alternative?', answer: 'Nexal’s core calorie, macro, meal and workout tracking are free. Premium AI planning and scanning are paid. It is an alternative workflow, not a promise to reproduce every MyFitnessPal feature.' },
-      { question: 'Can I import my MyFitnessPal history into Nexal?', answer: 'This guide does not promise an automatic import. Check what data you need to retain before changing apps.' },
-      { question: 'Does installing Nexal cancel my other fitness subscription?', answer: 'No. Manage any existing subscription with its provider or the store where you purchased it.' },
-    ],
-  },
-  {
     slug: 'ai-meal-planner-with-macros',
-    title: 'How to use an AI meal planner with macros and real food preferences',
-    metaTitle: 'AI Meal Planner with Macros: A Practical Guide',
+    updatedAt: '2026-11-16',
+    title: 'How to check an AI meal plan against your macros',
+    metaTitle: 'How to Check an AI Meal Plan Against Your Macros',
     description: 'Learn what to enter into an AI macro meal planner, how to review a plan and when to substitute meals. Explore Nexal Premium on Android.',
     category: 'AI MEAL PLANNING', readTime: '5 min read',
     intro: 'A meal plan is only useful if the meals fit your day. Before you generate one, make your targets and preferences clear, then review the output rather than assuming that AI has checked every detail.',
@@ -249,7 +154,7 @@ const acquisitionGuides: Guide[] = [
         'The NHS Eatwell Guide describes balance across food groups over a day or week. Use that wider context rather than treating a generated macro total as a complete assessment of nutrition. Individual targets and dietary advice may require a qualified professional.',
       ] },
       { id: 'inputs', title: 'Give the planner inputs you can actually use', paragraphs: [
-        'Start with the targets and preferences supported by the app. Nexal Premium uses your calorie and macro targets alongside food preferences, restrictions and allergies to generate meal ideas. Those inputs are not a guarantee that every generated recipe is suitable.',
+        'Start with the targets and preferences supported by the app. Nexal Premium uses your calorie and macro targets and the allergies you list to generate meal ideas; it does not take other food preferences, so swap any meal you do not want. Those inputs are not a guarantee that every generated recipe is suitable.',
         'Review whether the resulting meals fit your shopping, cooking time and normal routine. This guide does not claim that Nexal automatically optimises grocery costs, delivers groceries or checks every ingredient label.',
       ], example: { title: 'Illustrative meal-planning brief', headers: ['Input or review step', 'Example'], rows: [
         ['Targets', 'Use your own appropriate calorie and macro targets, not numbers copied from this article'],
@@ -287,6 +192,7 @@ const acquisitionGuides: Guide[] = [
   },
   {
     slug: 'home-workout-planner-app',
+    updatedAt: '2026-11-15',
     title: 'How to choose and use a home workout planner app on Android',
     metaTitle: 'Home Workout Planner App: Android Setup Guide',
     description: 'Plan home workouts around your space, equipment and schedule. Use this setup checklist and explore free logging plus Premium AI plans in Nexal.',
@@ -316,7 +222,7 @@ const acquisitionGuides: Guide[] = [
       ] },
       { id: 'ai-home', title: 'What to check in an AI home workout plan', paragraphs: [
         'Choose the home setting where the app supports it and provide your goal, experience and realistic training days. Then read the output. If a suggested exercise requires unavailable equipment or unsuitable movements, revise the plan before following it.',
-        'Nexal Premium supports home or gym workout generation and includes exercise sets, repetitions and rest times in four-to-six-week plans. This does not promise every possible equipment combination, a no-equipment programme for every user or a plan tailored to an injury.',
+        'Nexal Premium supports home or gym workout generation and includes exercise sets, repetitions and rest times in six or eight week plans. This does not promise every possible equipment combination, a no-equipment programme for every user or a plan tailored to an injury.',
         'AI plans can make mistakes. If you have an injury, health condition or uncertainty about exercise suitability, get appropriate professional guidance. Stop if a movement causes pain or concerning symptoms rather than completing it for a streak.',
       ] },
       { id: 'first-log', title: 'Try the home-workout logging workflow for free', paragraphs: [
@@ -375,7 +281,7 @@ const workflowGuides: Guide[] = [
         'This is an educational logging method, not a calorie target or a weight-loss programme. For individual dietary needs, seek appropriate professional advice. If detailed tracking negatively affects your wellbeing, you do not need to keep doing it.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Explore free meal and macro tracking in Nexal', text: 'Keep homemade meals beside your workout and progress tracking.' },
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Explore free meal and macro tracking in Nexal', text: 'Keep homemade meals beside your workout and progress tracking.' },
     sources: [{ href: 'https://www.nhs.uk/live-well/eat-well/food-guidelines-and-food-labels/how-to-read-food-labels/', label: 'NHS: nutrition labels and portion information' }],
     faqs: [
       { question: 'How do I calculate macros for one meal-prep portion?', answer: 'Estimate the batch totals, then multiply by your portion’s share of the batch. This assumes the ingredients are distributed evenly; otherwise log components separately.' },
@@ -385,6 +291,7 @@ const workflowGuides: Guide[] = [
   },
   {
     slug: 'workout-tracker-vs-ai-workout-planner',
+    updatedAt: '2026-11-15',
     title: 'Workout tracker vs AI workout planner: which do you need?',
     metaTitle: 'Workout Tracker vs AI Planner: Which Do You Need?',
     description: 'Understand workout logging versus AI plan generation, compare what to record and try free workout tracking before choosing Nexal Premium on Android.',
@@ -399,7 +306,7 @@ const workflowGuides: Guide[] = [
       ] },
       { id: 'planner', title: 'What an AI workout planner adds', paragraphs: [
         'A planner uses inputs such as your goal, experience and available training days to organise sessions. The value is in creating a starting structure, not simply generating a longer list of exercises.',
-        'Nexal Premium generates four-to-six-week workout plans for home or gym settings, with sets, repetitions and rest times. Core custom workouts and workout logging are available without a subscription.',
+        'Nexal Premium generates six or eight week workout plans for home or gym settings, with sets, repetitions and rest times. Core custom workouts and workout logging are available without a subscription.',
         'AI does not observe your technique, assess an injury or know whether a particular exercise is suitable for you. Review the output and seek qualified guidance when you need help selecting movements or deciding how to train.',
       ] },
       { id: 'decision', title: 'Match the app feature to the problem you have', paragraphs: [

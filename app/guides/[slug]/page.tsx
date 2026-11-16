@@ -51,11 +51,11 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
   );
   return <main className="guides-page">
     <JsonLd data={schema} />
-    <nav className="nav shell" aria-label="Main navigation"><Link href="/" className="brand" aria-label="Nexal home"><BrandMark /></Link><div className="nav-links"><Link href="/guides">All Guides</Link><Link href={guide.feature.href}>App Features</Link></div><PlayButton compact placement={`${guide.slug}_nav`} /></nav>
+    <nav className="nav shell" aria-label="Main navigation"><Link href="/" className="brand" aria-label="Nexal home"><BrandMark /></Link><div className="nav-links"><Link href="/guides">All Guides</Link><Link href={guide.feature.href}>App Features</Link></div><PlayButton compact path={path} placement="nav" /></nav>
     <header className="guide-hero shell"><nav className="guide-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span aria-hidden="true">/</span><Link href="/guides">Guides</Link><span aria-hidden="true">/</span><span>{guide.category.toLowerCase()}</span></nav><span className="section-kicker">{guide.category}</span><h1>{guide.title}</h1><p>{guide.intro}</p><div className="guide-byline"><span>By Nexal</span><time dateTime={dates.published}>{new Intl.DateTimeFormat('en-AU', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${dates.published}T00:00:00Z`))}</time><span>{guide.readTime}</span></div></header>
-    <div className="guide-entry-cta shell"><PlayButton placement={`${guide.slug}_intro`} /><p>Download on Android, create your free account and start tracking. AI planning is optional Premium.</p></div>
+    <div className="guide-entry-cta shell"><PlayButton path={path} placement="intro" /><p>Download on Android, create your free account and start tracking. AI planning is optional Premium.</p></div>
     <div className="guide-layout shell">
-      <aside className="guide-sidebar"><nav aria-label="In this guide"><h2>In this guide</h2>{guide.sections.map(section => <a key={section.id} href={`#${section.id}`}>{section.title}</a>)}</nav><div className="guide-sidebar-offer"><strong>Start with free tracking.</strong><p>AI planning is optional Premium.</p><PlayButton placement={`${guide.slug}_sidebar`} /></div></aside>
+      <aside className="guide-sidebar"><nav aria-label="In this guide"><h2>In this guide</h2>{guide.sections.map(section => <a key={section.id} href={`#${section.id}`}>{section.title}</a>)}</nav><div className="guide-sidebar-offer"><strong>Start with free tracking.</strong><p>AI planning is optional Premium.</p><PlayButton path={path} placement="sidebar" /></div></aside>
       <article className="guide-article" aria-label={guide.title}>
         <div className="guide-takeaway"><span className="section-kicker">THE SHORT VERSION</span><p>{guide.takeaway}</p></div>
         {seeAlso.length > 0 && <nav className="guide-see-also" aria-label="Read next"><span className="section-kicker">READ NEXT</span><ul>{seeAlso.map(item => <li key={item.slug}><Link href={`/guides/${item.slug}`}>{item.label}</Link></li>)}</ul></nav>}
@@ -66,6 +66,6 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
       </article>
     </div>
     <section className="guide-related shell"><span className="section-kicker">KEEP LEARNING</span><h2>More practical guides</h2><GuideCards exclude={guide.slug} /></section>
-    <SiteFooter />
+    <SiteFooter path={path} />
   </main>;
 }

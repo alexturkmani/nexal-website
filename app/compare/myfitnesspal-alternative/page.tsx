@@ -4,7 +4,7 @@ import { seoPageMetadata } from '../../site-config';
 
 const page = {
   path: '/compare/myfitnesspal-alternative',
-  title: 'MyFitnessPal Alternative for Android: Nexal',
+  title: 'MyFitnessPal Alternative for Android',
   description: 'Compare Nexal and MyFitnessPal on Android: free macro logging, ads, barcode scanning, workouts and AI planning, with the trade-offs stated plainly.',
 };
 
@@ -44,8 +44,8 @@ export default function Page() {
       heading: 'Nexal vs MyFitnessPal, feature by feature',
       intro: 'Both apps are free to download. The differences are in how food gets into the log, what the free plan includes and whether training sits beside nutrition.',
       competitor: 'MyFitnessPal',
-      checked: '2026-11-14',
-      sources: [{ label: 'MyFitnessPal Premium', href: 'https://www.myfitnesspal.com/premium' }],
+      checked: '2026-11-16',
+      sources: [{ label: 'MyFitnessPal Premium', href: 'https://www.myfitnesspal.com/premium' }, { label: 'MyFitnessPal Premium+', href: 'https://support.myfitnesspal.com/hc/en-us/articles/34347930588557-Premium' }],
       rows: [
         { feature: 'Calorie and macro logging', nexal: 'Free: calories, protein, carbohydrates and fat', other: 'Free food, nutrition and weight tracking' },
         { feature: 'Ads on the free plan', nexal: 'None, on any plan', other: 'Shown; ad-free logging is a Premium feature' },
@@ -53,7 +53,7 @@ export default function Page() {
         { feature: 'Barcode scanning', nexal: 'Premium', other: 'Premium' },
         { feature: 'Macro targets', nexal: 'Calculated from your profile for free; custom gram targets not supported', other: 'Custom goals by gram or percentage are Premium' },
         { feature: 'Workout logging', nexal: 'Free: sets, reps, weight, rest timer, history and weekly volume', other: 'Free exercise tracking' },
-        { feature: 'AI workout and meal plans', nexal: 'Premium: 4 to 6 week workout plans and macro-based meal plans', other: 'Check the current listing for meal-planning tiers' },
+        { feature: 'AI workout and meal plans', nexal: 'Premium: 6 or 8 week workout plans and macro-based meal plans', other: 'Meal Planner is part of Premium+, a higher paid tier; no AI workout plans' },
         { feature: 'Intermittent fasting timer', nexal: 'Free', other: 'Premium' },
         { feature: 'Platforms and integrations', nexal: 'Android phone only; no wearable or Health Connect sync', other: 'Android, iPhone and web, with many app and device connections' },
       ],

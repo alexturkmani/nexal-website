@@ -8,6 +8,7 @@ export const buyerIntentGuides: Guide[] = [
   {
     ...publication,
     slug: 'best-ai-workout-and-meal-planner-apps-android',
+    updatedAt: '2026-11-16',
     title: 'Best AI workout and meal planner apps for Android: a buyer’s checklist',
     metaTitle: 'Best AI Workout and Meal Planner Apps for Android',
     description: 'A buyer’s checklist for AI workout and meal planner apps on Android: plan quality, macro alignment, free versus paid tiers and one app versus two.',
@@ -46,18 +47,22 @@ export const buyerIntentGuides: Guide[] = [
         'Many planners advertise AI features but put everyday logging behind the same subscription. Before you start a trial, list which tasks you will still be able to do on the free tier, and set a reminder before the trial converts. Google Play shows the price and renewal terms at checkout and lets you manage subscriptions from your account.',
         'As examples, checked on 15 November 2026: MyFitnessPal’s official Premium page lists barcode scanning, custom macro goals and ad-free logging as paid features. Fitbod’s help centre describes a workout-focused app, and it does not log food. Nexal keeps manual workout and meal logging free, and puts AI workout plans, AI meal plans, AI macro estimates and barcode scanning in Premium. Check each listing yourself because tiers change.',
       ] },
+      { id: 'first-session-test', title: 'Run a first-session test and read the renewal terms', paragraphs: [
+        'Before judging any app on its AI features, do one ordinary day in it. Log a familiar meal with the right portion, record a workout you understand, then find both entries again the next morning. If that takes effort now, it will take more effort in week six, whatever the plan generator produces.',
+        'If you start a trial, read the renewal amount and date at checkout. An annual price shown as a monthly equivalent is still charged as one annual payment. Uninstalling an app does not cancel a Google Play subscription; cancel it in your Google Play subscriptions, and check that you can restore a purchase on a new phone before you rely on it.',
+      ] },
       { id: 'one-app-or-two', title: 'One unified app or two specialised apps?', paragraphs: [
         'Training and nutrition affect the same goal, so seeing them together has a practical benefit: you can notice that protein dips on training days, or that sessions shrink in weeks when you under-eat. Two separate apps can hold the same data, but you have to remember to open both and connect the dots yourself.',
         'Specialised apps can still be the better choice. A dedicated strength app may adapt each session more deeply, and a large food database speeds up logging if you eat many packaged foods. A unified app wins when the switching cost is what stops you logging. If you already maintain two apps without friction, there is less reason to change.',
       ] },
       { id: 'try-nexal', title: 'Run the checklist on Nexal', paragraphs: [
-        'Nexal is an Android app that keeps workouts, meals and progress in one place. Workout logging, custom workouts, history and manual meal, calorie and macro logging are free. Premium adds AI workout plans of four to six weeks, AI meal plans built around your calorie and macro targets, preferences and allergies, AI macro estimates and barcode scanning.',
+        'Nexal is an Android app that keeps workouts, meals and progress in one place. Workout logging, custom workouts, history and manual meal, calorie and macro logging are free. Premium adds AI workout plans of six or eight weeks, AI meal plans built around your calorie and macro targets that avoid the allergies you list, AI macro estimates and barcode scanning.',
         'Run the same brief through Nexal that you gave other apps. Note the boundaries too: Nexal does not include a searchable food database, does not sync with wearables or Health Connect, and is not available on iPhone. If it passes your checklist, the local Premium price is shown in Google Play before you subscribe.',
       ] },
     ],
     feature: { href: '/workout-meal-planner-app', label: 'See Nexal’s workout and meal planner', text: 'Test free tracking first. Add AI planning only if it passes your checklist.' },
     seeAlso: [
-      { slug: 'choose-workout-and-meal-planner-app', label: 'How to choose a workout and meal planner app' },
+      { slug: 'all-in-one-fitness-app-vs-separate-trackers', label: 'All-in-one fitness app or separate trackers?' },
       { slug: 'test-fitness-app-before-subscribing', label: 'Test a fitness app before subscribing' },
       { slug: 'free-vs-paid-fitness-app-decision', label: 'Free versus paid fitness apps' },
     ],
@@ -71,6 +76,7 @@ export const buyerIntentGuides: Guide[] = [
       { question: 'Is there one best AI workout and meal planner app for Android?', answer: 'No single app suits everyone. The best choice is the app whose plans fit your days, equipment and food preferences, whose numbers add up, and whose free tier covers what you need after any trial.' },
       { question: 'Are AI meal plans accurate to my macros?', answer: 'Not automatically. Add up a generated day and check single meals with roughly 4 kcal per gram of protein and carbohydrate and 9 kcal per gram of fat. Large gaps mean the plan needs checking.' },
       { question: 'Is one app better than separate workout and food apps?', answer: 'One app helps when switching between apps is what stops you logging. If you already use two apps without friction, a specialised pair can be the better fit.' },
+      { question: 'Is an annual fitness subscription better value than monthly?', answer: 'Only if you keep using the app for most of the year. Compare the total annual charge and the renewal terms shown at checkout, not just the monthly equivalent.' },
       { question: 'Is AI planning free in Nexal?', answer: 'No. Workout and meal logging are free. AI workout plans, AI meal plans, AI macro estimates and barcode scanning are part of Nexal Premium.' },
     ],
   },
@@ -100,7 +106,7 @@ export const buyerIntentGuides: Guide[] = [
       ], caption: 'Invented example using 4 kcal per gram of protein and carbohydrate and 9 kcal per gram of fat. Not a personal recommendation.' } },
       { id: 'meal-split', title: 'Turn daily targets into meals you can repeat', paragraphs: [
         'Large daily numbers are easier to hit when you split them across the meals you already eat. Spreading protein across three or four meals is a common practical approach and keeps any single meal from needing an unusual portion. The split below is one way to divide the example targets.',
-        'Leave room for real life. If dinner is often unpredictable, plan a higher-protein breakfast and lunch so the day is not decided at 8 p.m. Repeating two or three reliable breakfasts also makes logging faster, because the same entry can be re-used. If you would rather not build meals yourself, Nexal Premium’s AI meal plans are built around your calorie and macro targets, preferences and allergies.',
+        'Leave room for real life. If dinner is often unpredictable, plan a higher-protein breakfast and lunch so the day is not decided at 8 p.m. Repeating two or three reliable breakfasts also makes logging faster, because the same entry can be re-used. If you would rather not build meals yourself, Nexal Premium’s AI meal plans are built around your calorie and macro targets and avoid the allergies you list.',
       ], example: { title: 'Example split of 144 g protein, 297 g carbohydrate and 65 g fat', headers: ['Meal', 'Protein', 'Carbohydrate', 'Fat'], rows: [
         ['Breakfast', '35 g', '70 g', '15 g'],
         ['Lunch', '40 g', '80 g', '18 g'],
@@ -179,7 +185,7 @@ export const buyerIntentGuides: Guide[] = [
       { id: 'track-in-nexal', title: 'Organise push pull legs in Nexal', paragraphs: [
         'In Nexal you can create custom workouts for free. Make one for each session, such as Push, Pull and Legs, or Push A and Push B for the six-day version, and add your exercises once. Each time you train, log sets, reps and weight, use the rest timer between sets and add notes such as seat settings or a grip change.',
         'Your workout history keeps each session comparable, and the weekly volume chart shows total weight × reps for the last eight weeks, so you can see whether the split is adding up over a training block rather than judging it from one session.',
-        'If you would rather not build the plan yourself, Nexal Premium’s AI workout planner can generate a four to six week muscle-group plan, such as push pull legs or upper and lower, around your goal, experience and three to seven training days.',
+        'If you would rather not build the plan yourself, Nexal Premium’s AI workout planner can generate a six or eight week muscle-group plan, such as push pull legs or upper and lower, around your goal, experience and three to seven training days.',
       ] },
     ],
     feature: { href: '/free-workout-tracker-app', label: 'Log your push pull legs sessions free in Nexal', text: 'Track every push, pull and legs session free. Add an AI plan only if you want one.' },
@@ -197,7 +203,7 @@ export const buyerIntentGuides: Guide[] = [
       { question: 'Is push pull legs good for beginners?', answer: 'The three-day version can suit beginners because each session has a clear theme and the week is easy to follow. Learn each movement with appropriate guidance before adding load.' },
       { question: 'Should I run push pull legs three or six days a week?', answer: 'Start with three unless you have consistent time and recovery for six. Completing three planned sessions beats half-completing six.' },
       { question: 'How do I know when to increase the weight?', answer: 'With double progression, increase the load by the smallest available step once you complete every set at the top of your repetition range with good technique.' },
-      { question: 'Can Nexal create a push pull legs plan for me?', answer: 'Nexal Premium can generate a four to six week muscle-group plan, such as push pull legs, from your goal, experience and training days. Building and logging your own PPL workouts is free.' },
+      { question: 'Can Nexal create a push pull legs plan for me?', answer: 'Nexal Premium can generate a six or eight week muscle-group plan, such as push pull legs, from your goal, experience and training days. Building and logging your own PPL workouts is free.' },
     ],
   },
   {

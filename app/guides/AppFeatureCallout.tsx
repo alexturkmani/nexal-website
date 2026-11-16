@@ -14,7 +14,7 @@ export const calloutOffers: Record<Topic, Offer> = {
   'WORKOUT PLANNING': {
     kicker: 'NEXAL AI WORKOUT PLANNER',
     heading: 'Want the week planned for you?',
-    text: 'Nexal Premium builds a four to six week gym or home plan around your goal, experience and training days. Logging workouts stays free.',
+    text: 'Nexal Premium builds a six or eight week gym or home plan around your goal, experience and training days. Logging workouts stays free.',
     links: [
       { href: '/ai-workout-planner', label: 'See how the AI workout planner works' },
       { href: '/free-workout-tracker-app', label: 'Start with the free workout tracker' },
@@ -61,7 +61,7 @@ export default function AppFeatureCallout(props: Props) {
     <h2 id={`${props.slug}-callout`}>{props.feature.text}</h2>
     <p className="guide-product-text">{offer.text}</p>
     <div className="guide-callout-links">{links.map(link => <Link key={link.href} href={link.href}>{link.label} <span aria-hidden="true">→</span></Link>)}</div>
-    <PlayButton placement={`${props.slug}_article`} />
+    <PlayButton path={`/guides/${props.slug}`} placement="article" />
     <p className="guide-product-note">Free core tracking. Premium AI tools. Local prices and eligible trial offers are shown in Google Play.</p>
   </section>;
 }

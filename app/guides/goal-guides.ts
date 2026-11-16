@@ -472,7 +472,7 @@ export const goalGuides: Guide[] = [
         'If your only question concerns an action happening, a companion checklist may be enough. If you need food records alongside workouts, evaluate Nexal’s free manual workflow against that requirement. Decide how much information you will maintain before considering paid shortcuts. The app should serve a question you already have rather than create a pressure to measure every available part of your day.',
       ] },
     ],
-    feature: { href: '/calorie-macro-tracker', label: 'Explore Nexal’s free nutrition records', text: 'Choose food quantities and macro logging when those details serve your question.' },
+    feature: { href: '/free-calorie-and-macro-tracker', label: 'Explore Nexal’s free nutrition records', text: 'Choose food quantities and macro logging when those details serve your question.' },
     sources: [{ href: 'https://www.foodstandards.gov.au/consumer/labelling/panels', label: 'FSANZ: nutrition information panels and serving information' }],
     faqs: [
       { question: 'Can a habit tick replace a meal entry?', answer: 'It can answer whether your defined action happened, but it cannot establish the quantities or nutrition of the meal you ate.' },

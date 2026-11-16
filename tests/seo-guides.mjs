@@ -34,13 +34,13 @@ for (const slug of slugs) {
     const url = new URL(decode(match[1]));
     assert.equal(url.searchParams.get('id'), 'com.nexal.app');
     const referrer = new URLSearchParams(url.searchParams.get('referrer'));
-    assert.equal(referrer.get('utm_campaign'), 'web_to_app');
+    assert.equal(referrer.get('utm_campaign'), `guide_${slug}`, `${path}: campaign names the guide`);
     assert.ok(referrer.get('utm_content'));
   }
   assert.ok(!document.includes('—'), `${path}: no em dashes`);
   console.log(`PASS ${path}: metadata, schema, canonical, Play attribution`);
 }
-for (const path of ['/', '/guides', '/ai-workout-planner', '/ai-meal-planner', '/calorie-macro-tracker', '/workout-meal-planner-app']) {
+for (const path of ['/', '/guides', '/ai-workout-planner', '/ai-meal-planner', '/free-calorie-and-macro-tracker', '/workout-meal-planner-app']) {
   const document = await html(path);
   if (path === '/guides') {
     assert.ok(document.includes('id="guide-query"'), 'Guide search is server rendered');

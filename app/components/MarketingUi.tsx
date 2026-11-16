@@ -20,8 +20,9 @@ function GooglePlayMark() {
   </svg>;
 }
 
-export function PlayButton({ compact = false, placement }: { compact?: boolean; placement: string }) {
-  return <a className={`play-button ${compact ? 'compact' : ''}`} href={playStoreUrl(placement)} aria-label="Get Nexal on Google Play"><GooglePlayMark/><span><small>GET IT ON</small><strong>Google Play</strong></span></a>;
+/** `path` is the page the button sits on; it becomes utm_campaign. `placement` becomes utm_content. */
+export function PlayButton({ compact = false, path, placement }: { compact?: boolean; path: string; placement: string }) {
+  return <a className={`play-button ${compact ? 'compact' : ''}`} href={playStoreUrl({ path, placement })} aria-label="Get Nexal on Google Play"><GooglePlayMark/><span><small>GET IT ON</small><strong>Google Play</strong></span></a>;
 }
 
 /** Product and comparison pages, shared by the footer and landing-page cross-links. */
@@ -29,13 +30,12 @@ export const productLinks = [
   { href: '/workout-meal-planner-app', label: 'Workout and meal planner app', short: 'Workout and meal planner' },
   { href: '/ai-workout-planner', label: 'AI workout planner for Android', short: 'AI workout planner' },
   { href: '/ai-meal-planner', label: 'AI meal planner', short: 'AI meal planner' },
-  { href: '/calorie-macro-tracker', label: 'Calorie and macro tracker', short: 'Calorie and macro tracker' },
   { href: '/free-calorie-and-macro-tracker', label: 'Free calorie and macro tracker', short: 'Free macro tracker' },
   { href: '/free-workout-tracker-app', label: 'Free workout tracker and gym log', short: 'Free workout tracker' },
   { href: '/compare/myfitnesspal-alternative', label: 'Nexal vs MyFitnessPal', short: 'MyFitnessPal alternative' },
   { href: '/compare/fitbod-alternative', label: 'Nexal vs Fitbod', short: 'Fitbod alternative' },
 ];
 
-export function SiteFooter() {
-  return <footer><div className="shell"><Link href="/" className="brand" aria-label="Nexal home"><BrandMark lazy /></Link><p>Fitness, nutrition and progress, connected.</p><div>{productLinks.map(link => <Link key={link.href} href={link.href}>{link.label}</Link>)}<Link href="/guides">Workout and macro tracking guides</Link><Link href="/about">About Nexal and our guides</Link><a href={playStoreUrl('footer')}>Get Nexal on Google Play</a><a href="mailto:support@nexal.app">Support</a><Link href="/privacy">Privacy</Link></div><div className="footer-meta"><span>© 2026 Nexal</span><a className="designer-credit" href="https://blumint.com.au/" target="_blank" rel="noopener noreferrer">Designed by Blu Mint</a></div></div></footer>;
+export function SiteFooter({ path }: { path: string }) {
+  return <footer><div className="shell"><Link href="/" className="brand" aria-label="Nexal home"><BrandMark lazy /></Link><p>Fitness, nutrition and progress, connected.</p><div>{productLinks.map(link => <Link key={link.href} href={link.href}>{link.label}</Link>)}<Link href="/guides">Workout and macro tracking guides</Link><Link href="/about">About Nexal and our guides</Link><a href={playStoreUrl({ path, placement: 'footer' })}>Get Nexal on Google Play</a><a href="mailto:support@nexal.app">Support</a><Link href="/privacy">Privacy</Link></div><div className="footer-meta"><span>© 2026 Nexal</span><a className="designer-credit" href="https://blumint.com.au/" target="_blank" rel="noopener noreferrer">Designed by Blu Mint</a></div></div></footer>;
 }
