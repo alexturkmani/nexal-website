@@ -37,5 +37,9 @@ export const productLinks = [
 ];
 
 export function SiteFooter({ path }: { path: string }) {
-  return <footer><div className="shell"><Link href="/" className="brand" aria-label="Nexal home"><BrandMark lazy /></Link><p>Fitness, nutrition and progress, connected.</p><div>{productLinks.map(link => <Link key={link.href} href={link.href}>{link.label}</Link>)}<Link href="/guides">Workout and macro tracking guides</Link><Link href="/about">About Nexal and our guides</Link><a href={playStoreUrl({ path, placement: 'footer' })}>Get Nexal on Google Play</a><a href="mailto:support@nexal.app">Support</a><Link href="/privacy">Privacy</Link></div><div className="footer-meta"><span>© 2026 Nexal</span><a className="designer-credit" href="https://blumint.com.au/" target="_blank" rel="noopener noreferrer">Designed by Blu Mint</a></div></div></footer>;
+  return <footer><div className="shell"><Link href="/" className="brand" aria-label="Nexal home"><BrandMark lazy /></Link><p>Fitness, nutrition and progress, connected.</p><nav className="footer-nav" aria-label="Footer">
+    <div className="footer-group"><h2>Features</h2>{productLinks.filter(link => !link.href.startsWith('/compare/')).map(link => <Link key={link.href} href={link.href}>{link.label}</Link>)}</div>
+    <div className="footer-group"><h2>Compare</h2>{productLinks.filter(link => link.href.startsWith('/compare/')).map(link => <Link key={link.href} href={link.href}>{link.label}</Link>)}</div>
+    <div className="footer-group"><h2>Guides and support</h2><Link href="/guides">Workout and macro tracking guides</Link><Link href="/about">About Nexal and our guides</Link><a href={playStoreUrl({ path, placement: 'footer' })}>Get Nexal on Google Play</a><a href="mailto:support@nexal.app">Support</a><Link href="/privacy">Privacy</Link></div>
+  </nav><div className="footer-meta"><span>© 2026 Nexal</span><a className="designer-credit" href="https://blumint.com.au/" target="_blank" rel="noopener noreferrer">Designed by Blu Mint</a></div></div></footer>;
 }

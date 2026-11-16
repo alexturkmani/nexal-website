@@ -12,6 +12,20 @@ const get = async path => {
 const robots = await get('/robots.txt');
 assert.ok(robots.includes(`Sitemap: ${origin}/sitemap.xml`));
 assert.ok(!/Disallow:\s*\/\s*$/m.test(robots));
+// Each named crawler (and "*") must have its own group that allows the whole site.
+const robotGroups = robots.split(/\n\s*\n/).map(block => block.split('\n').map(line => line.trim()));
+for (const bot of ['Googlebot', 'Bingbot', 'OAI-SearchBot', 'PerplexityBot', '*']) {
+  const group = robotGroups.find(lines => lines.some(line => line.toLowerCase() === `user-agent: ${bot.toLowerCase()}`));
+  assert.ok(group?.includes('Allow: /'), `robots: ${bot} allowed`);
+  assert.ok(!group?.includes('Disallow: /'), `robots: ${bot} not blocked`);
+}
+const home = await get('/');
+for (const path of ['/workout-meal-planner-app', '/ai-workout-planner', '/ai-meal-planner', '/free-calorie-and-macro-tracker', '/free-workout-tracker-app', '/compare/myfitnesspal-alternative', '/compare/fitbod-alternative', '/guides']) {
+  assert.ok(home.includes(`href="${path}"`), `home links to ${path} (one click)`);
+}
+const keyFile = (await import('node:fs')).readdirSync(new URL('../public/', import.meta.url)).find(file => /^[0-9a-f]{32}\.txt$/.test(file));
+assert.ok(keyFile, 'IndexNow key file in public/');
+assert.equal((await get(`/${keyFile}`)).trim(), keyFile.replace('.txt', ''), 'IndexNow key file serves its key');
 const sitemap = await get('/sitemap.xml');
 const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => decode(match[1]));
 assert.equal(new Set(urls).size, urls.length, 'No duplicate sitemap URLs');

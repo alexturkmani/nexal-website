@@ -1,6 +1,14 @@
 import type { Metadata } from 'next';
 
-export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.nexalfitness.com').replace(/\/$/, '');
+/**
+ * The single canonical origin. Deliberately not read from an environment variable,
+ * so a misconfigured deployment can never emit a preview or bare-domain canonical,
+ * og:url, JSON-LD @id or sitemap entry.
+ */
+export const siteUrl = 'https://www.nexalfitness.com';
+
+/** IndexNow key; public by design and served at /<key>.txt (see scripts/submit-indexing.ts). */
+export const indexNowKey = '995b58848ee49de3ad1cdeb4b23d37f6';
 
 export const playStoreBaseUrl = 'https://play.google.com/store/apps/details?id=com.nexal.app';
 

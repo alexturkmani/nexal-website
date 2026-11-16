@@ -12,6 +12,8 @@ const nextConfig: NextConfig = {
   // Consolidated pages (SEO audit, 16 Nov 2026): permanent: true sends 308.
   async redirects() {
     return [
+      // Safety net: Vercel's domain settings already send the bare domain to www.
+      { source: '/:path*', has: [{ type: 'host', value: 'nexalfitness.com' }], destination: 'https://www.nexalfitness.com/:path*', permanent: true },
       { source: '/calorie-macro-tracker', destination: '/free-calorie-and-macro-tracker', permanent: true },
       { source: '/guides/myfitnesspal-alternative-android', destination: '/compare/myfitnesspal-alternative', permanent: true },
       { source: '/guides/choose-workout-and-meal-planner-app', destination: '/guides/best-ai-workout-and-meal-planner-apps-android', permanent: true },
