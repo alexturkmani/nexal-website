@@ -1,6 +1,7 @@
 import type { NextConfig } from 'next';
 import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { retiredGuides } from './app/guides/retired-guides';
 
 const root = dirname(fileURLToPath(import.meta.url));
 const nextConfig: NextConfig = {
@@ -17,6 +18,8 @@ const nextConfig: NextConfig = {
       { source: '/calorie-macro-tracker', destination: '/free-calorie-and-macro-tracker', permanent: true },
       { source: '/guides/myfitnesspal-alternative-android', destination: '/compare/myfitnesspal-alternative', permanent: true },
       { source: '/guides/choose-workout-and-meal-planner-app', destination: '/guides/best-ai-workout-and-meal-planner-apps-android', permanent: true },
+      // Guides retired 20 Nov 2026 (never crawled); see app/guides/retired-guides.ts.
+      ...Object.entries(retiredGuides).map(([from, to]) => ({ source: `/guides/${from}`, destination: `/guides/${to}`, permanent: true })),
     ];
   },
   async headers() {

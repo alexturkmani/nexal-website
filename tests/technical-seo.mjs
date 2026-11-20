@@ -69,6 +69,10 @@ const consolidated = {
   '/guides/myfitnesspal-alternative-android': '/compare/myfitnesspal-alternative',
   '/guides/choose-workout-and-meal-planner-app': '/guides/best-ai-workout-and-meal-planner-apps-android',
 };
+// Retired guides (app/guides/retired-guides.ts) must redirect to a surviving guide too.
+const retiredSource = (await import('node:fs')).readFileSync(new URL('../app/guides/retired-guides.ts', import.meta.url), 'utf8');
+for (const [, from, to] of retiredSource.matchAll(/'([a-z0-9-]+)': '([a-z0-9-]+)'/g)) consolidated[`/guides/${from}`] = `/guides/${to}`;
+assert.ok(Object.keys(consolidated).length >= 45, 'retired guide map loaded');
 for (const [from, to] of Object.entries(consolidated)) {
   const response = await fetch(`${base}${from}`, { redirect: 'manual' });
   assert.equal(response.status, 308, `${from}: permanent redirect`);

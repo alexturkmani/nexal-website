@@ -6,40 +6,6 @@ const publication = { publishedAt: '2026-10-11' };
 export const nutritionGuides: Guide[] = [
   {
     ...publication,
-    slug: 'raw-versus-cooked-food-weights',
-    title: 'Raw versus cooked food weights: match the entry to the scale',
-    metaTitle: 'Raw vs Cooked Food Weights for Logging',
-    description: 'Avoid raw and cooked weight mix-ups with a rice example, entry checks and a practical method for logging your actual portion.',
-    category: 'NUTRITION TRACKING', readTime: '5 min read',
-    intro: 'You weighed rice after cooking, but the entry in your diary describes dry rice. Both numbers say grams, yet they describe different things. For home cooks who weigh ingredients, the important choice is matching the food entry to the state in which it was measured.',
-    takeaway: 'Choose the entry and measurement together. Use your own batch weights when converting portions, and do not assume every food has the same cooking yield.',
-    sections: [
-      { id: 'food-state', title: 'Read the preparation words before entering grams', paragraphs: [
-        'Look for dry, raw, boiled, drained, roasted or prepared in the food description. Those words establish what the nutrition values describe. A measured 150 grams of cooked rice belongs with a compatible cooked entry, rather than 150 grams of dry rice. If the description is ambiguous, check the package or another clearly described source before using it.',
-        'Food Standards Australia New Zealand explains that cooking can change weight through water and fat gains or losses. That means weight change is not a universal conversion rule. Rice absorbing water and meat losing cooking juices require different reasoning. Keep edible portions separate from bones, skins or liquid you discard.',
-      ] },
-      { id: 'rice-example', title: 'Convert a cooked share using your own batch', paragraphs: [
-        'Suppose you cook 200 grams of dry rice in water and the finished rice weighs 600 grams. You serve yourself 150 grams of that cooked batch. Your serving is one quarter of the finished rice, so it corresponds to one quarter of the original dry quantity: 50 grams. These are invented weights to demonstrate the method, not a standard rice yield.',
-        'If you use the dry label for the calculation, apply its values to 50 grams. Alternatively, use a suitable cooked entry for the measured 150 grams. Choose one approach. Recording both would count the same rice twice, and adding oil or sauce requires its own accounting.',
-      ] },
-      { id: 'yield-limits', title: 'Know when the conversion stops being useful', paragraphs: [
-        'The batch-share approach assumes the portion represents the batch reasonably well. It does not reconstruct the nutrition of discarded fat or cooking liquid. A drained meat dish, breaded food or mixed casserole may need a more specific prepared-food source. Avoid correcting every cooked ingredient with the rice ratio from another meal.',
-        'For a repeat dish, record the measured starting and finished weights somewhere you can consult while calculating. If the next batch cooks longer and finishes lighter, update that calculation. Keeping yesterday’s cooked portion estimate while changing today’s cooking method can quietly introduce more error than rounding a final number.',
-      ] },
-      { id: 'logging-workflow', title: 'Make the method visible in your logging routine', paragraphs: [
-        'Before logging dinner, identify the source, food state, edible quantity and any separately added ingredients. Calculate the portion using those details, then enter the resulting meal nutrition through Nexal’s free manual meal, calorie and macro logging on Android. Batch arithmetic can happen outside the app; this method does not depend on an automatic recipe converter.',
-        'When copying a recent meal, check whether the measured state and portion still match. A useful final question is whether another person could tell what your quantity means from the source you used. Clear assumptions make later comparisons more useful than a long string of decimal places attached to an uncertain entry.',
-      ] },
-    ],
-    feature: { href: '/free-calorie-and-macro-tracker', label: 'Explore manual nutrition tracking', text: 'Use Nexal’s free Android meal tracker for the portion you actually ate.' },
-    sources: [{ href: 'https://www.foodstandards.gov.au/business/labelling/nutrition-panel-calculator/weight-change-factors', label: 'FSANZ: cooking and weight change factors' }],
-    faqs: [
-      { question: 'Should I always weigh food raw?', answer: 'No. Either state can work when the nutrition entry matches it. Raw and cooked quantities should not be exchanged without a suitable calculation.' },
-      { question: 'Can I use one rice conversion for every batch?', answer: 'Treat your measured batch ratio as specific to that batch. Water absorption and cooking conditions can change the finished weight.' },
-    ],
-  },
-  {
-    ...publication,
     slug: 'grams-versus-servings-food-logging',
     title: 'Grams versus servings: choose a food logging unit you can explain',
     metaTitle: 'Grams vs Servings in a Food Diary',
@@ -138,40 +104,6 @@ export const nutritionGuides: Guide[] = [
     faqs: [
       { question: 'What if the restaurant only publishes calories?', answer: 'Use that figure for the matching item and portion. Any macro breakdown from another source remains a separate estimate, not official restaurant information.' },
       { question: 'Should I log an uncertain restaurant meal at all?', answer: 'If tracking is useful to you, an acknowledged estimate can preserve context. It does not need to be represented as exact.' },
-    ],
-  },
-  {
-    ...publication,
-    slug: 'packed-lunch-food-diary',
-    title: 'A packed lunch food diary that follows what you actually eat',
-    metaTitle: 'Packed Lunch Food Diary: A Practical Routine',
-    description: 'Organise lunch components, keep packaging details and reconcile packed food with what you actually eat at work or on the go.',
-    category: 'NUTRITION TRACKING', readTime: '5 min read',
-    intro: 'Packing lunch gives you a chance to capture quantities before leaving home, but the lunchbox is not proof of what you ate. This routine is for commuters and shift workers whose packed meals sometimes return half-full or gain a last-minute cafe extra.',
-    takeaway: 'Prepare the information at packing time, confirm consumption after lunch, and keep snacks and drinks separate enough to update when the day changes.',
-    sections: [
-      { id: 'packing-time', title: 'Capture details where the labels and scale are', paragraphs: [
-        'When assembling lunch, identify the main meal, separate snacks and drinks. Keep the label information for unfamiliar products or calculate the portion before throwing packaging away. You do not need an elaborate spreadsheet. A short personal note with the food name, quantity and calculation source can prevent an uncertain reconstruction during a busy break.',
-        'For a sandwich, establish the bread quantity, filling and spread separately before combining their nutrition into a meal entry. If lunch is leftovers, use the calculation for that particular dish and portion. The goal is to make information available later, rather than logging the entire lunchbox as consumed the moment you zip the bag.',
-      ] },
-      { id: 'separate-components', title: 'Separate components that might be eaten at different times', paragraphs: [
-        'Imagine you pack a wrap, a yoghurt and a piece of fruit. At lunch you eat the wrap and half the yoghurt, then save the fruit for the trip home. Treating all three as one fixed meal makes it harder to describe that day. Keep enough component detail to record the yoghurt share and fruit when consumed.',
-        'If the wrap contains several ingredients but is always eaten as a whole, combining its calculated nutrition can be convenient. That is different from combining the wrap with every optional snack. Choose your logging boundary according to what might change independently, not simply which foods were stored in the same container.',
-      ] },
-      { id: 'after-lunch', title: 'Reconcile packed, eaten and returned food', paragraphs: [
-        'After your break, check whether anything came back, was shared or was replaced. A purchased coffee, an extra roll or a colleague’s biscuit belongs to the day if you consumed it. Add those items without assuming that lunch must still match the plan you made at home. Equally, do not leave a full portion logged when some remains uneaten.',
-        'A simple worked distinction is two packed wraps with one eaten at noon and one taken home. The noon record is one wrap, not the entire batch. If the second wrap is later eaten, record it then. Preparing food and consuming food are separate events, even when the original quantity is easy to calculate.',
-      ] },
-      { id: 'repeat-workdays', title: 'Reuse the routine while checking each workday', paragraphs: [
-        'Nexal supports free manual meal logging and copying recent meals on Android. A recurring lunch can start from a recent entry, provided you check the ingredients, quantity and actual consumption. Reusing yesterday’s wrap may save effort; it should not also bring back yesterday’s yoghurt when today you packed something else.',
-        'At the end of a few workdays, look for information gaps rather than judging the menu. Perhaps you consistently forget the drink or cannot remember the afternoon snack. Put the relevant detail within reach at packing time. The best lunch diary routine fits the real break you have, including interruptions and changing plans, without requiring perfect recall.',
-      ] },
-    ],
-    feature: { href: '/free-calorie-and-macro-tracker', label: 'Explore everyday meal logging', text: 'Try free manual tracking and recent-meal copying in Nexal for Android.' },
-    sources: [{ href: '/free-calorie-and-macro-tracker', label: 'Nexal: free core meal and macro tracking' }],
-    faqs: [
-      { question: 'Should I log lunch when I pack it?', answer: 'You can prepare the calculation then, but confirm the diary reflects the amount actually eaten after plans and portions change.' },
-      { question: 'Can I copy yesterday’s lunch?', answer: 'Yes, Nexal supports copying recent meals. Review the portion and components before treating the copied entry as today’s record.' },
     ],
   },
   {
@@ -347,40 +279,6 @@ export const nutritionGuides: Guide[] = [
   },
   {
     ...publication,
-    slug: 'reviewing-ai-photo-macro-estimates',
-    title: 'Reviewing AI photo macro estimates before adding them to a diary',
-    metaTitle: 'Review AI Photo Macro Estimates Before Logging',
-    description: 'Audit a photo-based food estimate for identity, portion, hidden ingredients and double-counting before using it in your meal record.',
-    category: 'NUTRITION TRACKING', readTime: '5 min read',
-    intro: 'A meal photo can help you remember what was on the plate, but an estimate generated from it still needs review. This guide is for anyone assessing photo-based macro output from an AI tool. It does not establish that Nexal offers photo scanning.',
-    takeaway: 'Treat photo output as a proposed food description and calculation. Verify the foods, amounts and unseen additions using information you actually have before logging the result.',
-    sections: [
-      { id: 'identity-audit', title: 'First check whether the output describes the right food', paragraphs: [
-        'Read the proposed meal in plain language before looking at the total. Does it identify the filling, grain and preparation correctly? A wrap can contain ingredients hidden by the bread, and a bowl can hide layers beneath its topping. If you know the recipe or have the package, that information is a better basis for those details than appearance alone.',
-        'Imagine an estimate describes a bowl as chicken, rice and yoghurt sauce, but you know it contains tofu and a different dressing. Correct the ingredient assumptions before considering the macro figure. A believable total attached to the wrong dish is not made useful by its precision. Food identity comes before portion arithmetic.',
-      ] },
-      { id: 'portion-audit', title: 'Check quantity and consumption separately', paragraphs: [
-        'A photo of a plate does not tell a reviewer how much you ultimately ate. Start with any quantity information you have: the package serving, a measured ingredient amount or a known share of a batch. Then account for leftovers. If you ate half the pictured meal, the original whole-plate estimate needs review before entering it.',
-        'Suppose the tool assumes a rice component weighs 250 grams, while your kitchen record says 150 grams cooked. Replace that assumption using a compatible cooked-food source. Do not reduce the entire bowl proportionally if only the rice amount was wrong. The other components may have been estimated on different assumptions and need their own checks.',
-      ] },
-      { id: 'hidden-ingredients', title: 'Ask what the image cannot settle', paragraphs: [
-        'Review oil, sauces, spreads, drinks and ingredients mixed into the dish. You might know these from cooking, a menu description or the person who prepared the meal. If you do not, acknowledge the uncertainty instead of assuming either that the estimate included everything or that an extra full sauce portion should always be added.',
-        'Double-counting is a particular risk when you combine a whole-dish estimate with separate ingredients. If the output already represents dressed pasta, adding the full dressing again may repeat it. Choose whether your final record uses a reviewed combined estimate or component calculations. Keep that choice clear enough to avoid counting the same food through two methods.',
-      ] },
-      { id: 'final-review', title: 'Use the estimate only at the confidence it deserves', paragraphs: [
-        'Ask what the result would change in your diary. If a large part of the recipe is unknown, a broad estimate may still preserve context, but it should not drive a precise conclusion about that day. You can keep a personal note of uncertain components without claiming the AI tool supplied a reliable confidence score.',
-        'Nexal Premium includes AI macro estimates; free manual meal and macro logging is available on Android. Photo analysis is not a verified Nexal feature in this guide. You can apply this review process to output from another tool, then manually record a supported calculation. Pay for assistance only if reviewing it still leaves you with a useful workflow.',
-      ] },
-    ],
-    feature: { href: '/free-calorie-and-macro-tracker', label: 'Explore Nexal’s meal logging workflow', text: 'Keep reviewed estimates in a free manual food diary; Premium macro estimates are optional.' },
-    sources: [{ href: '/free-calorie-and-macro-tracker', label: 'Nexal: tracking and the limits of nutrition estimates' }],
-    faqs: [
-      { question: 'Does this article mean Nexal has a food photo scanner?', answer: 'No. Photo scanning is not established here. Nexal’s verified offer includes Premium AI macro estimates and free manual logging.' },
-      { question: 'Can a photo estimate replace known ingredient quantities?', answer: 'Use known recipe, package and measured quantity information to review the estimate. A photo-based guess should not override better information you have.' },
-    ],
-  },
-  {
-    ...publication,
     slug: 'food-diary-versus-macro-planner',
     title: 'Food diary versus macro planner: record the day or organise the next one',
     metaTitle: 'Food Diary vs Macro Planner: Choose Your Tool',
@@ -547,40 +445,6 @@ export const nutritionGuides: Guide[] = [
     faqs: [
       { question: 'Does this guide recommend a daily protein target?', answer: 'No. It explains recording and portion calculations. Get qualified individual advice when you need a personal dietary target.' },
       { question: 'Is food weight the same as protein weight?', answer: 'No. Use the food’s stated protein value and scale it to the portion. The full weight of a food is not its protein content.' },
-    ],
-  },
-  {
-    ...publication,
-    slug: 'meal-substitution-review',
-    title: 'Review a meal substitution before keeping the original macro total',
-    metaTitle: 'Meal Substitution Review: Check the New Meal',
-    description: 'Check ingredient swaps for quantities, preparation, preferences and changed macros before updating a planned meal or copying an old entry.',
-    category: 'MEAL PLANNING', readTime: '5 min read',
-    intro: 'An ingredient substitution can rescue dinner when the shop is out of something, but the original nutrition line does not automatically transfer. This guide is for cooks adapting a meal plan and deciding what needs review before the replacement becomes part of the diary.',
-    takeaway: 'A workable swap must suit the recipe and your preferences. Recalculate the changed component for its actual quantity, then record the meal you prepared rather than the original proposal.',
-    sections: [
-      { id: 'swap-purpose', title: 'Identify why you need a replacement', paragraphs: [
-        'Name the constraint first: availability, cost, taste, equipment or an ingredient preference. That determines what a useful substitution must accomplish. A replacement that resembles the original macro total may still require equipment you do not have or introduce an ingredient you avoid. Review practical suitability before trying to preserve a particular number.',
-        'If an allergy or medical restriction motivates the swap, check the current ingredient and allergen information and obtain appropriate advice. Do not treat an AI suggestion or a vegetarian label as safety confirmation. FSANZ’s food allergy guidance explains the role of declared allergens on labels; a meal planner is a different source of information.',
-      ] },
-      { id: 'quantity-example', title: 'Calculate the changed component on its own basis', paragraphs: [
-        'Imagine the original recipe uses 100 grams of a product labelled with 10 grams of protein per 100 grams. Your replacement supplies 6 grams per 100 grams, and you use 150 grams. The original contribution was 10 grams of protein; the replacement contributes 9 grams. These figures are invented to demonstrate why both the product and quantity matter.',
-        'Review calories, carbohydrate and fat using the replacement’s own figures too. Matching protein alone does not make the entire nutrition profile identical. You do not need to force an equivalent result; the diary simply needs to describe the adapted meal. Keep unchanged components separate so you can revise the relevant part without recalculating unrelated assumptions.',
-      ] },
-      { id: 'preparation-review', title: 'Check cooking method, yield and added ingredients', paragraphs: [
-        'A substitute may change the way you prepare the dish. A dry ingredient and a ready-to-eat version require different quantity references. A replacement cooked in sauce may introduce an addition not present in the original method. Read the preparation instructions and account for what you actually use instead of comparing ingredient names alone.',
-        'Suppose you replace a plain filling with a marinated one. Check whether the product values already include the marinade before adding a separate sauce estimate. If the finished batch makes a different number of portions, review your share as well. The original plan’s serving count is not evidence that your changed recipe produced identical plates.',
-      ] },
-      { id: 'update-record', title: 'Reconcile the plan with the actual meal', paragraphs: [
-        'After cooking, confirm the replacement product, amount and portion consumed. Enter the revised calculation and make sure the original food has not remained as a second contribution. If you keep the substitution in a personal recipe note, describe what changed so that next time you do not have to reconstruct the decision from an old total.',
-        'Nexal Premium offers AI meal planning; free manual meal and macro logging is available on Android. Review suggested substitutions yourself and record the actual meal through the supported workflow. This article does not promise automatic macro matching or automatic adjustments after a swap. A useful suggestion still needs a final check against your ingredients and quantities.',
-      ] },
-    ],
-    feature: { href: '/ai-meal-planner', label: 'Explore planning ideas with Nexal Premium', text: 'Review AI meal suggestions, then log what you actually prepare using free core tracking.' },
-    sources: [{ href: 'https://www.foodstandards.gov.au/consumer/foodallergies', label: 'FSANZ: food allergies and label information' }, { href: '/ai-meal-planner', label: 'Nexal: AI meal planning' }],
-    faqs: [
-      { question: 'Can I keep the original macros after an ingredient swap?', answer: 'Only if your reviewed calculation supports that result. A different product, amount or preparation can change the meal’s nutrition.' },
-      { question: 'Does an AI substitution guarantee allergy safety?', answer: 'No. Check current labels and appropriate advice. A generated suggestion is not an allergen safety assessment.' },
     ],
   },
   {

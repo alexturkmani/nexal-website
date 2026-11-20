@@ -134,39 +134,6 @@ export const choosingGuides: Guide[] = [
     ],
   },
   {
-    slug: 'fitness-app-without-wearable',
-    title: 'Choosing a fitness app when you do not use a wearable',
-    metaTitle: 'Choose a Fitness App Without a Wearable',
-    description: 'Build a useful phone-based fitness diary without buying a watch. Evaluate manual workout history, meal logging and the limits of recorded data.',
-    publishedAt: '2026-10-11', category: 'CHOOSING AN APP', readTime: '4 min read',
-    intro: 'You can choose a fitness diary around information you enter yourself. Start with your recording needs instead of treating a watch as a required accessory.',
-    takeaway: 'Choose a manual workflow that preserves useful detail, and keep recorded actions separate from measurements you have not taken.',
-    sections: [
-      { id: 'manual-record', title: 'Decide what your own entries can answer', paragraphs: [
-        'A manual workout record can answer which session you completed, which movements you used and what work you recorded. A meal diary can answer which foods and portions you entered. These are practical questions for organising the next visit or reviewing your records. They do not require a device to recognise an exercise automatically or identify a meal for you.',
-        'Write the questions you actually want answered. Perhaps you need to remember a machine setting in your existing paper notes or distinguish two exercise variations in your workout record. Perhaps you want to find a familiar breakfast entry again. This separates useful recording tasks from sensor measurements that may be interesting but are not essential to your current reason for using an app.',
-      ] },
-      { id: 'gym-test', title: 'Test a phone workflow in the gym', paragraphs: [
-        'Use a suitable session you already understand as the test. Enter completed work at a natural pause and put the phone safely away when you resume. Check whether the display is readable and whether finding the next entry distracts you. You are evaluating the recording process, so there is no reason to change exercise intensity or perform extra work for the test.',
-        'Afterwards, reopen the session and compare it with what you intended to record. Confirm the exercise names and any units you used. If you are unsure about a detail, keep that uncertainty in your own notes rather than filling the record with a guess that will later look authoritative. Manual input is most useful when its limits remain visible to you.',
-      ] },
-      { id: 'avoid-inference', title: 'Do not turn a diary into an unmeasured sensor report', paragraphs: [
-        'Completed sets are not a heart-rate trace, and a logged meal is not a direct measurement of everything your body needs. Keep your conclusions aligned with your inputs. If you did not measure a quantity, avoid presenting it as a verified result merely because an app produces a precise-looking figure. An empty field can be more honest than a fabricated value.',
-        'For example, reviewing three saved sessions can help you notice that an exercise name changed between visits. It cannot by itself explain why you felt tired on Friday. Use that observation to ask better questions about your routine, rather than treating the diary as a diagnosis. Seek qualified help when a question involves symptoms, individual dietary needs or exercise suitability.',
-      ] },
-      { id: 'phone-only-choice', title: 'Choose the app before considering extra hardware', paragraphs: [
-        'Nexal’s free core manual workout logging, custom workouts and history can be evaluated on your Android phone. Free manual meal, calorie and macro logging and copying recent meals also fit a phone-based diary. Start with these everyday tasks. If they solve your organisational problem, a separate hardware purchase is not part of the decision you need to make now.',
-        'Before choosing any future wearable, define the new question it would answer and check compatibility directly with the relevant products. Treat hardware and software as separate purchases with separate requirements. For your first week, the useful outcome may simply be a clear session history and an understandable meal diary that you can maintain using the phone you already carry.',
-      ] },
-    ],
-    feature: { href: '/workout-meal-planner-app', label: 'Explore manual tracking in Nexal', text: 'Evaluate workout and nutrition logging on your Android phone.' },
-    sources: [{ href: '/workout-meal-planner-app', label: 'Nexal: manual tracking for Android' }],
-    faqs: [
-      { question: 'Do I need a watch for Nexal manual tracking?', answer: 'You can use manual workout and meal logging on Android without making a wearable part of that workflow.' },
-      { question: 'Can a manual diary measure my recovery?', answer: 'A diary records the information you enter. It does not independently establish recovery or explain symptoms.' },
-    ],
-  },
-  {
     slug: 'fitness-app-busy-parents',
     title: 'Choosing a fitness app for busy parents: organise the interruptions',
     metaTitle: 'Fitness App for Busy Parents',
@@ -197,40 +164,6 @@ export const choosingGuides: Guide[] = [
     faqs: [
       { question: 'What should parents prioritise when testing an app?', answer: 'Test retrieval after an interruption, recording only completed work and reusing familiar meals with portion checks.' },
       { question: 'Does this guide recommend a training schedule for parents?', answer: 'No. It addresses organisation around childcare and daily commitments, rather than prescribing exercise or nutrition.' },
-    ],
-  },
-  {
-    slug: 'fitness-app-shift-workers',
-    seeAlso: [{ slug: 'workout-and-meal-plan-for-shift-workers', label: 'Workout and meal planning across rotating shifts' }],
-    title: 'Choosing a fitness app for shift workers with changing days',
-    metaTitle: 'Fitness App for Shift Workers',
-    description: 'Test workout and meal logging around overnight shifts, changing rosters and calendar boundaries without forcing your routine into a fixed week.',
-    publishedAt: '2026-10-11', category: 'CHOOSING AN APP', readTime: '4 min read',
-    intro: 'A rotating roster can make a standard calendar view confusing. Choose an app by how clearly you can interpret records across changing start times and midnight.',
-    takeaway: 'Test date handling with your actual shift pattern and use consistent names to distinguish work blocks from calendar days.',
-    sections: [
-      { id: 'roster-first', title: 'Use the roster as your planning reference', paragraphs: [
-        'Start with the upcoming roster rather than a generic Monday-to-Friday template. Write down the actual shift dates and the travel commitments around them. Identify possible recording moments, such as a break when phone use is allowed or time after getting home. This defines when the diary is accessible without making assumptions about suitable exercise timing, sleep or meals.',
-        'A hypothetical worker might have two overnight shifts followed by a day shift later in the roster. Naming suitable existing workouts by purpose, such as familiar gym session, may be clearer than naming them Monday workout. Keep the roster in your normal scheduling tool and use the fitness app for records. Verify any scheduling requirement directly before depending on an app.',
-      ] },
-      { id: 'midnight-test', title: 'Test what happens around midnight', paragraphs: [
-        'Choose a sample shift that begins on one date and ends on another. Check which date an entry receives and whether the app offers the date controls you need. Do this before building a long diary. A meal at 01:00 may belong to the next calendar date even though you think of it as part of the previous evening’s work block.',
-        'Pick a consistent convention for your own interpretation. You could use calendar dates for records and keep an external roster note that connects those dates to a shift. Avoid counting the same meal twice because it appears in two different mental summaries. If a required date-editing workflow is unavailable or unclear, resolve that limitation before choosing the app for overnight use.',
-      ] },
-      { id: 'comparison-blocks', title: 'Compare similar roster blocks', paragraphs: [
-        'A calendar week with several night shifts is organisationally different from a week of leave. When reviewing your diary, compare records within similar circumstances and keep the roster visible. Ask whether entries were understandable and complete enough for your purposes. Do not interpret every difference in a weekly total as evidence that your training or food choices need changing.',
-        'For example, an apparent gap on Wednesday could mean a session was entered after midnight on Thursday. A quick date check may explain the record without any change to the actual routine. Document recurring ambiguities in a separate note and decide whether the app helps you resolve them. The review should reduce confusion, rather than create pressure to make every week look identical.',
-      ] },
-      { id: 'shift-fit', title: 'Test Nexal with a real roster block', paragraphs: [
-        'Nexal provides free manual workout logging, custom workouts and history, plus free manual meal, calorie and macro logging on Android. Copying recent meals can help with repeated work lunches, provided you check the actual portion. Test these functions across one ordinary roster block and inspect the saved dates. Treat date behaviour as something to verify on your phone.',
-        'Premium AI planning is optional and should be reviewed against your current circumstances. A generated plan does not establish whether a schedule is appropriate for fatigue, symptoms or a health condition. If those issues affect your choices, seek appropriate qualified advice. Choose the app for clear organisation, and judge it by whether you can understand your records after a changing week.',
-      ] },
-    ],
-    feature: { href: '/workout-meal-planner-app', label: 'Test Nexal around your roster', text: 'Try free manual workout and meal records across an ordinary shift block.' },
-    sources: [{ href: '/workout-meal-planner-app', label: 'Nexal: Android workout and meal tracking' }],
-    faqs: [
-      { question: 'What is the most useful shift-worker app test?', answer: 'Check entries before and after midnight, then make sure you can connect their calendar dates to your own roster.' },
-      { question: 'Should night-shift workers follow a generated timetable automatically?', answer: 'No. Review any plan against your circumstances and seek qualified advice for fatigue, symptoms or individual health needs.' },
     ],
   },
   {
@@ -437,76 +370,6 @@ export const choosingGuides: Guide[] = [
     faqs: [
       { question: 'How do I know whether an app is simple enough?', answer: 'Test a complete task, including correction and retrieval, with your normal phone settings. Note confusion rather than judging only by screenshots or tap counts.' },
       { question: 'Do I have to use every dashboard or feature?', answer: 'No. Choose the features that answer your own questions and leave other tools outside your routine unless you find a clear use for them.' },
-    ],
-  },
-  {
-    slug: 'gym-nutrition-app-students',
-    title: 'Choosing a gym and nutrition app as a student',
-    metaTitle: 'Gym and Nutrition App for Students',
-    description: 'Choose fitness tracking around lectures, shared kitchens, exams and a student budget. Test free workout and meal logging before paying.',
-    publishedAt: '2026-10-11', category: 'CHOOSING AN APP', readTime: '4 min read',
-    intro: 'Student routines can change between teaching weeks, exams and paid work. A useful app should fit those changes without assuming a fixed timetable or a subscription budget.',
-    takeaway: 'Evaluate the diary during a normal teaching week, preserve clear meal and exercise details, and budget against the full subscription charge.',
-    sections: [
-      { id: 'teaching-week', title: 'Test against your actual teaching week', paragraphs: [
-        'Use your current timetable to identify when you can reasonably open a diary. Include commuting, placements, library time and paid work alongside lectures. A long gap between classes may not be available if it includes travel or an assignment meeting. Evaluate the app during a normal teaching week so your experience reflects the routine it will need to support.',
-        'Name workouts by their content or purpose rather than by a weekday that may change next term. If a qualified instructor has helped you choose a suitable routine, test whether you can create and retrieve that routine clearly. The app can organise records around your timetable; it does not decide how much training belongs alongside your current academic or work commitments.',
-      ] },
-      { id: 'shared-kitchen', title: 'Keep shared-kitchen meal records understandable', paragraphs: [
-        'Shared cooking creates a recordkeeping problem when the whole pan and your own plate are confused. If you log food, distinguish your portion from the shared dish and keep the ingredient information you actually know. For a packaged lunch, check whether the label describes the entire package or one serving. Avoid treating a housemate’s meal entry as a verified description of yours.',
-        'Suppose a familiar pasta dish changes because a different person cooks it with another sauce. Reusing an old diary entry without checking would hide that change. Copying can still reduce effort when the meal really repeats. Nexal includes copying recent meals in its free manual nutrition workflow, so test that process with your own recurring food and review the result before saving.',
-      ] },
-      { id: 'student-budget', title: 'Make the app cost compete with a real budget', paragraphs: [
-        'Write down the amount available for optional software after your essential costs. Compare that amount with the full charge shown at checkout, not just a monthly equivalent. Check any trial and renewal terms before accepting. Do not assume a student discount exists or that an annual purchase is automatically sensible because its advertised equivalent looks smaller than another billing option.',
-        'Choose a specific paid task if you are considering an upgrade. Perhaps you want draft planning help, or a quicker way to identify packaged food. Then test whether you actually use it. During exam periods you may use the app differently; a subscription decision should account for your likely pattern across the term rather than a single enthusiastic week after installation.',
-      ] },
-      { id: 'term-review', title: 'Choose a baseline that survives a changing term', paragraphs: [
-        'Nexal’s core manual workout logging, custom workouts and history are free on Android, as are manual meal, calorie and macro logging. These give you a way to evaluate a combined diary without adding a paid commitment. Start with the tasks you need and inspect a few saved records. Leave extra tools for later if the basic workflow is still unfamiliar.',
-        'At the end of a teaching block, ask what changed: your available gym, shared cooking arrangements or opportunities to record information. Adjust your organisation accordingly. Premium AI workout and meal planning, macro estimates and barcode scanning remain optional. Neither free nor paid software replaces qualified advice about personal dietary needs or exercise technique, and the subscription should not be treated as a prerequisite for participating in gym life.',
-      ] },
-    ],
-    feature: { href: '/workout-meal-planner-app', label: 'Explore free student-friendly tracking tasks', text: 'Try Nexal’s core workout and meal diary on Android before considering paid tools.' },
-    sources: [{ href: '/workout-meal-planner-app', label: 'Nexal: free core tracking and Premium overview' }],
-    faqs: [
-      { question: 'Does this guide promise a Nexal student discount?', answer: 'No. Evaluate free core tracking and check the actual Premium offer shown to your account if you are considering a subscription.' },
-      { question: 'What should I test during term time?', answer: 'Test retrieving your workout routine, recording a meal accurately and repeating those tasks around your real classes, commute and work.' },
-    ],
-  },
-  {
-    slug: 'evaluate-ai-fitness-advice-safely',
-    title: 'How to evaluate AI fitness advice before acting on it',
-    metaTitle: 'Evaluate AI Fitness Advice Safely',
-    description: 'Review AI workout and meal suggestions for assumptions, practical fit and unsupported claims, and know when qualified advice is needed.',
-    publishedAt: '2026-10-11', category: 'AI FITNESS', readTime: '4 min read',
-    intro: 'A confident, well-formatted answer can still contain mistakes. Evaluate an AI fitness suggestion by its assumptions and evidence before treating it as a plan you should follow.',
-    takeaway: 'Use AI output as a draft to review, verify factual claims independently and take individual medical or suitability questions to qualified professionals.',
-    sections: [
-      { id: 'task-boundary', title: 'Identify the task the AI is actually performing', paragraphs: [
-        'Distinguish organising a draft from assessing your personal needs. An AI tool may help arrange exercise ideas or suggest meals, but a fluent response does not show that it has examined you, observed your technique or checked the contents of your kitchen. State the task in plain language before evaluating the result so you know what the output would need to accomplish.',
-        'For example, a draft list of familiar meals can be reviewed for practicality. Deciding whether a diet is suitable for a medical condition requires a different level of individual assessment. Do not let the presentation blur those tasks. If you need qualified judgement, use the draft only as a discussion aid and take the decision to the appropriate professional.',
-      ] },
-      { id: 'assumption-check', title: 'Check assumptions against the situation in front of you', paragraphs: [
-        'Read a proposed workout exercise by exercise. Ask whether the equipment is available, whether you understand the movement and whether it matches the circumstances you supplied. A hypothetical plan that includes a machine your gym lacks needs review before use. Do not improvise a substitute merely to complete the generated schedule if you are unsure what is suitable.',
-        'For a meal suggestion, inspect ingredients, amounts and preparation steps. Compare them with the actual products and portions you intend to use. A neat nutrition total does not verify an unknown recipe. Treat allergy and medical dietary questions as matters for independent checks and appropriate qualified advice, rather than assuming that entering a restriction guarantees every generated ingredient is suitable.',
-      ] },
-      { id: 'verify-claims', title: 'Verify claims and watch for unjustified certainty', paragraphs: [
-        'The World Health Organization warns that generative models used in health contexts can produce false or incomplete information and can encourage automation bias, where users overlook errors. Apply that caution when a fitness answer sounds definitive. Check a factual claim against the primary source it supposedly relies on, and make sure the source actually supports the specific statement.',
-        'A warning sign is a precise promise of results without a defensible basis, or an instruction that dismisses symptoms because the plan says to continue. Another is a citation that cannot be found or discusses a different population. Ask what evidence would change the recommendation. If the answer cannot acknowledge uncertainty, do not treat its confidence as evidence that the advice is sound.',
-      ] },
-      { id: 'review-workflow', title: 'Keep a review step between generation and action', paragraphs: [
-        'Use a simple sequence outside the app if necessary: read the draft, mark assumptions, verify consequential facts and resolve suitability questions. Keep a record of changes so you remember which version you reviewed. If a significant input changes, such as equipment availability or your circumstances, review again. A previously checked draft is not automatically appropriate after the situation changes.',
-        'Nexal Premium includes AI workout and meal planning and AI macro estimates. Free core manual workout and nutrition logging remains an option when you prefer an existing suitable routine. Evaluate generated material using the same scrutiny you would apply elsewhere. The product’s role as a planning tool does not establish clinical assessment, supervised technique or guaranteed results from following an output.',
-      ] },
-    ],
-    feature: { href: '/ai-workout-planner', label: 'Review Nexal’s AI workout planning tools', text: 'Explore optional Premium planning and keep human review part of your decision.' },
-    sources: [
-      { href: 'https://www.who.int/news/item/18-01-2024-who-releases-ai-ethics-and-governance-guidance-for-large-multi-modal-models', label: 'WHO: risks and governance of generative AI in health' },
-      { href: '/ai-workout-planner', label: 'Nexal: AI workout planner and its role' },
-      { href: '/ai-meal-planner', label: 'Nexal: AI meal planning features' },
-    ],
-    faqs: [
-      { question: 'Does a confident AI answer mean the advice is reliable?', answer: 'No. Review its assumptions and verify factual claims against suitable primary sources. Clear formatting and confidence do not establish accuracy.' },
-      { question: 'Can AI fitness planning replace medical or technique advice?', answer: 'No. Seek appropriately qualified help for medical needs, symptoms, exercise suitability and technique. Treat generated plans as drafts requiring review.' },
     ],
   },
 ];

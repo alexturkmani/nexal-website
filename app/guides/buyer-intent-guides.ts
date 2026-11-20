@@ -126,7 +126,7 @@ export const buyerIntentGuides: Guide[] = [
     seeAlso: [
       { slug: 'how-to-track-calories-and-macros', label: 'How to track calories and macros' },
       { slug: 'protein-tracking-without-prescribed-targets', label: 'Protein tracking without prescribed targets' },
-      { slug: 'raw-versus-cooked-food-weights', label: 'Raw versus cooked food weights' },
+      { slug: 'track-homemade-meals-and-meal-prep-macros', label: 'Track homemade meals and meal prep macros' },
     ],
     sources: [
       { href: 'https://doi.org/10.1186/s12970-017-0177-8', label: 'International Society of Sports Nutrition position stand: protein and exercise (2017)' },
@@ -191,7 +191,7 @@ export const buyerIntentGuides: Guide[] = [
     feature: { href: '/free-workout-tracker-app', label: 'Log your push pull legs sessions free in Nexal', text: 'Track every push, pull and legs session free. Add an AI plan only if you want one.' },
     seeAlso: [
       { slug: 'four-day-workout-routine-organisation', label: 'Organising a four-day workout routine' },
-      { slug: 'log-warm-up-sets-separately', label: 'Log warm-up sets separately' },
+      { slug: 'beginner-3-day-workout-plan', label: 'A beginner three-day workout week' },
       { slug: 'exercise-substitutions-comparable-history', label: 'Keep history comparable after exercise substitutions' },
     ],
     sources: [
@@ -255,7 +255,7 @@ export const buyerIntentGuides: Guide[] = [
     feature: { href: '/free-calorie-and-macro-tracker', label: 'See what is free and what Premium scanning adds', text: 'Log packaged and homemade meals free. Add barcode scanning with Premium if it saves you time.' },
     seeAlso: [
       { slug: 'food-barcode-scanner-limitations', label: 'What a successful barcode scan does not verify' },
-      { slug: 'per-container-versus-per-serving-food-labels', label: 'Per container versus per serving labels' },
+      { slug: 'how-to-track-calories-and-macros', label: 'How to track calories and macros' },
       { slug: 'track-homemade-meals-and-meal-prep-macros', label: 'Track homemade meals and meal prep macros' },
     ],
     sources: [
@@ -315,9 +315,9 @@ export const buyerIntentGuides: Guide[] = [
     ],
     feature: { href: '/workout-meal-planner-app', label: 'See how Nexal keeps workouts and meals together', text: 'Plan by day type and log training and meals in one app. Core tracking is free.' },
     seeAlso: [
-      { slug: 'fitness-app-shift-workers', label: 'Choosing a fitness app for shift workers' },
+      { slug: 'fitness-app-busy-parents', label: 'Choosing a fitness app as a busy parent' },
       { slug: 'workout-routine-changing-work-roster', label: 'A workout routine for a changing work roster' },
-      { slug: 'food-diary-midnight-overnight-meals', label: 'Logging overnight meals across midnight' },
+      { slug: 'fitness-app-frequent-travellers', label: 'A fitness app for frequent travellers' },
     ],
     sources: [
       { href: 'https://www.cdc.gov/niosh/work-hour-training-for-nurses/longhours/mod9/08.html', label: 'NIOSH: diet suggestions for night-shift workers' },
