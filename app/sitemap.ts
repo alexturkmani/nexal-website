@@ -9,10 +9,10 @@ import { guides, guideDates, libraryUpdatedDate } from './guides/content';
  */
 const pageUpdated = {
   home: '2026-11-16',
-  landing: '2026-11-15',
-  freeTrackers: '2026-11-16',
+  landing: '2026-11-20',
+  freeTrackers: '2026-11-20',
   /** Last copy change. Competitor facts in the tables were last checked on the date shown on each page. */
-  comparisons: '2026-11-16',
+  comparisons: '2026-11-20',
   about: '2026-10-11',
   privacy: '2026-09-01',
 };

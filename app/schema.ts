@@ -43,6 +43,7 @@ export function organizationNode(): Node {
     '@type': 'Organization',
     '@id': ids.organization,
     name: 'Nexal',
+    alternateName: 'Nexal Fitness',
     url: abs('/'),
     logo: { '@type': 'ImageObject', '@id': ids.logo, url: `${siteUrl}/nexal-logo.png` },
     email: 'support@nexal.app',
@@ -51,7 +52,7 @@ export function organizationNode(): Node {
 }
 
 export function websiteNode(): Node {
-  return { '@type': 'WebSite', '@id': ids.website, name: 'Nexal', url: abs('/'), inLanguage: 'en', publisher: { '@id': ids.organization } };
+  return { '@type': 'WebSite', '@id': ids.website, name: 'Nexal', alternateName: 'Nexal Fitness', url: abs('/'), inLanguage: 'en', publisher: { '@id': ids.organization } };
 }
 
 export function softwareApplicationNode(): Node {
@@ -59,6 +60,9 @@ export function softwareApplicationNode(): Node {
     '@type': 'SoftwareApplication',
     '@id': ids.app,
     name: 'Nexal',
+    // Brand variants people search for, and the exact Google Play listing title.
+    alternateName: ['Nexal Fitness', 'Nexal: AI Workout Meal Planner'],
+    sameAs: [playStoreBaseUrl],
     url: abs('/'),
     description: 'Android fitness app with AI workout and meal plans, calorie and macro tracking, barcode scanning, workout logging and progress insights.',
     applicationCategory: 'HealthApplication',

@@ -4,6 +4,7 @@ import { landingGraph } from '../schema';
 import JsonLd from './JsonLd';
 import { BrandMark, PlayButton, SiteFooter, productLinks } from './MarketingUi';
 import InteractivePreview, { type PreviewConfig } from './InteractivePreview';
+import { factsChecked, productFacts } from '../product-facts';
 import GuideCards from '../guides/GuideCards';
 
 type Props = {
@@ -31,6 +32,17 @@ export type Comparison = {
   checked: string;
   sources: { label: string; href: string }[];
 };
+
+/** Short, quotable facts in a definition list, which search snippets and AI answers extract cleanly. */
+function ProductFacts() {
+  const checked = new Intl.DateTimeFormat('en-AU', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${factsChecked}T00:00:00Z`));
+  return <section className="seo-facts shell" id="facts" aria-labelledby="facts-heading">
+    <span className="section-kicker">THE SHORT ANSWER</span>
+    <h2 id="facts-heading">Nexal at a glance</h2>
+    <dl className="seo-facts-list">{productFacts.map(fact => <div key={fact.label}><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>
+    <p className="seo-facts-note">Checked against the Nexal Android app on <time dateTime={factsChecked}>{checked}</time>. Prices and trial eligibility are confirmed in Google Play before you subscribe.</p>
+  </section>;
+}
 
 function ComparisonTable({ comparison }: { comparison: Comparison }) {
   const checked = new Intl.DateTimeFormat('en-AU', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${comparison.checked}T00:00:00Z`));
@@ -114,6 +126,7 @@ export default function SeoLanding({ page, slug, kicker, title, intro, sectionTi
     <header className="seo-hero shell"><div className="seo-hero-copy"><span className="eyebrow">{kicker}</span><h1>{title}</h1><p>{intro}</p><div className="hero-actions"><PlayButton path={page.path} placement="hero" /><a className="text-link" href="#benefits">Explore the benefits <span>↓</span></a></div><div className="trust-row"><p>Free core tracking. Premium AI planning. Available on Android.</p></div></div>{preview ? <InteractivePreview config={preview} /> : <SeoShowcase slug={slug} />}</header>
     <div className="signal-strip" role="region" aria-label="Nexal benefits"><div className="shell"><span>◆ PERSONALIZED DAILY TARGETS</span><span>◆ AI-POWERED PLANS</span><span>◆ MEANINGFUL PROGRESS</span></div></div>
     <section className="seo-benefits shell" id="benefits"><div className="section-heading"><div><span className="section-kicker">BUILT AROUND YOUR ROUTINE</span><h2>{sectionTitle}</h2></div><p>Helpful tools for your daily fitness and nutrition decisions, all in one Android app.</p></div><div className="seo-benefit-grid">{benefits.map((benefit, index) => <article className={`seo-benefit-card seo-benefit-${index + 1}`} key={benefit.title}><span className="card-number">0{index + 1}</span><div className="seo-benefit-icon" aria-hidden="true">{index === 0 ? '◎' : index === 1 ? '✦' : '↗'}</div><h3>{benefit.title}</h3><p>{benefit.text}</p><div className="seo-benefit-meter" aria-hidden="true"><i /></div></article>)}</div></section>
+    <ProductFacts />
     {detail && <section className="seo-feature-details shell"><div className="seo-feature-intro"><span className="section-kicker">WHAT YOU CAN ACTUALLY DO</span><h2>{detail.heading}</h2><p>{detail.intro}</p></div><div className="seo-feature-steps">{detail.points.map((point, index) => <article key={point.title}><span>0{index + 1}</span><h3>{point.title}</h3><p>{point.text}</p></article>)}</div><div className="seo-feature-action"><PlayButton path={page.path} placement="feature_details" /></div></section>}
     {comparison && <ComparisonTable comparison={comparison} />}
     <section className="seo-details" id="details"><div className="shell seo-details-grid"><div className="seo-details-copy"><span className="section-kicker light">PLAN. TRACK. PROGRESS.</span><h2>A clearer way to<br /><em>keep moving.</em></h2><p>Your plan and the actions you take belong together. Keep the details visible without losing sight of the bigger picture.</p><PlayButton path={page.path} placement="details" /></div><div className="seo-detail-panel"><div className="seo-detail-panel-head"><span>ILLUSTRATIVE APP OVERVIEW</span><strong>Your momentum</strong></div><div className="seo-detail-chart" role="img" aria-label="Illustrative weekly progress chart"><div className="seo-detail-grid"/><div className="seo-detail-bars">{[42, 57, 48, 71, 64, 83, 92].map((height,index)=><i key={index} style={{height:`${height}%`}} />)}</div></div><div className="seo-detail-labels"><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span></div><div className="seo-detail-caption"><span>Training</span><span>Nutrition</span><span>Progress</span></div></div></div></section>

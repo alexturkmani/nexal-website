@@ -63,6 +63,13 @@ for (const { loc } of entries) {
   if (landing.includes(path)) {
     const app = nodes.find(node => types(node).includes('SoftwareApplication'));
     assert.ok(app, `${path}: SoftwareApplication`);
+    assert.ok([app.alternateName].flat().includes('Nexal Fitness'), `${path}: app alternateName`);
+    assert.ok([nodes.find(node => node['@type'] === 'Organization')?.alternateName].flat().includes('Nexal Fitness'), `${path}: organization alternateName`);
+    if (path !== '/') {
+      const facts = html.match(/<section class="seo-facts[^"]*" id="facts"[^>]*>(.*?)<\/section>/s)?.[1] || '';
+      assert.ok((facts.match(/<dt>/g) || []).length >= 6, `${path}: Nexal at a glance facts`);
+      assert.ok(facts.includes('US$12.99'), `${path}: facts state the price`);
+    }
     assert.equal(app.applicationCategory, 'HealthApplication');
     assert.equal(app.operatingSystem, 'Android');
     assert.ok(app.offers.some(offer => offer.price === '0.00'), `${path}: free offer`);
@@ -79,6 +86,7 @@ for (const { loc } of entries) {
     assert.ok(page.mainEntity.length >= 4 && page.mainEntity.length <= 5, `${path}: 4 to 5 FAQs`);
   }
   if (path.startsWith('/guides/')) {
+    assert.ok(html.includes('written with AI assistance'), `${path}: AI-assistance authorship line`);
     const article = nodes.find(node => types(node).includes('Article'));
     assert.ok(article && types(article).includes('TechArticle'), `${path}: Article/TechArticle`);
     assert.ok(isDate(article.datePublished) && isDate(article.dateModified) && article.dateModified >= article.datePublished, `${path}: article dates`);
@@ -93,4 +101,13 @@ for (const { loc } of entries) {
     assert.equal(crumbs.itemListElement.at(-1).item, loc, `${path}: last crumb is page`);
   }
 }
+// /llms.txt: plain text map for AI answer engines, generated from the same data as the pages.
+const llms = await fetch(`${base}/llms.txt`);
+assert.equal(llms.status, 200, '/llms.txt status');
+assert.match(llms.headers.get('content-type') || '', /^text\/plain/, '/llms.txt content type');
+const llmsText = await llms.text();
+assert.ok(llmsText.startsWith('# Nexal (Nexal Fitness)'), '/llms.txt title');
+for (const path of landing.filter(p => p !== '/')) assert.ok(llmsText.includes(`${origin}${path})`), `/llms.txt lists ${path}`);
+for (const fact of ['US$12.99', 'US$110.00', '14-day free trial', 'Not available on iPhone', 'No searchable food database']) assert.ok(llmsText.includes(fact), `/llms.txt states: ${fact}`);
+assert.equal([...llmsText.matchAll(/\(https:\/\/www\.nexalfitness\.com\/guides\/[^)]+\)/g)].length, entries.filter(e => new URL(e.loc).pathname.startsWith('/guides/')).length, '/llms.txt lists every guide');
 console.log(`PASS structured data: ${entries.length} pages, JSON-LD parses, refs resolve, FAQ mirrors accordions`);
